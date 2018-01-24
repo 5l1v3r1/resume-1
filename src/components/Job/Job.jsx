@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Card, CardHeader, CardText } from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
@@ -58,5 +59,26 @@ class Job extends Component {
     );
   }
 }
+
+const jobItemShape = {
+  current: PropTypes.objectOf,
+  description: PropTypes.objectOf,
+  location: PropTypes.objectOf,
+  project: PropTypes.string,
+  section: PropTypes.array,
+  stack: PropTypes.array,
+  stackLabels: PropTypes.array,
+  startDate: PropTypes.array,
+  tagline: PropTypes.array
+};
+
+Job.propTypes = {
+  job: PropTypes.objectOf((PropTypes.shape(jobItemShape))).isRequired,
+  isJobExpanded: PropTypes.bool
+};
+
+Job.defaultProps = {
+  isJobExpanded: false
+};
 
 export default Job;
