@@ -10,11 +10,17 @@ const muiTheme = getMuiTheme({
   }
 });
 
+const Jobs = props =>
+  (props.jobs.map((job, i) => (
+    <Job key={job.fields.project} id={i} job={job} isJobExpanded={false} />
+  )));
+// export default Jobs;
+
 class Job extends Component {
   constructor (props) {
     super();
     this.state = {
-      isJobExpanded: true
+      isJobExpanded: false
     };
   }
 
@@ -25,7 +31,7 @@ class Job extends Component {
   }
 
   handleExpandChange (isJobExpanded) {
-    this.setState({ isJobExpanded });
+    this.setState(isJobExpanded);
   }
 
   render () {
@@ -81,4 +87,4 @@ Job.defaultProps = {
   isJobExpanded: false
 };
 
-export default Job;
+export default Jobs;
