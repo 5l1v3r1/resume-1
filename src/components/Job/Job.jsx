@@ -12,30 +12,37 @@ const muiTheme = getMuiTheme({
 
 const Jobs = props =>
   (props.jobs.map((job, i) => (
-    <Job key={job.fields.project} id={i} job={job} isJobExpanded={false} />
+    <Job
+      key={job.fields.project['en-US']}
+      id={i}
+      job={job}
+      isJobExpanded={(job.fields.project['en-US'] === props.initJobExpanded)}
+    />
   )));
-// export default Jobs;
 
 class Job extends Component {
   constructor (props) {
     super();
     this.state = {
-      isJobExpanded: false
+      expanded: false
     };
   }
 
+  handleExpandChange = expanded => {
+    this.setState({expanded: expanded});
+  };
+
   componentWillMount () {
     this.setState({
-      isJobExpanded: this.props.isJobExpanded
+      expanded: this.props.isJobExpanded
     });
-  }
-
-  handleExpandChange (isJobExpanded) {
-    this.setState(isJobExpanded);
   }
 
   render () {
     const job = this.props.job.fields;
+
+    const startYear = () =>
+      (job.startDate['en-US'].split('-')[0]);
 
     return (
       <div>
@@ -54,10 +61,14 @@ class Job extends Component {
             <CardText expandable>
               {job.description ? job.description['en-US'] : null}  <br />
               <br />
-              {job.recommendation ? `${job.recommendation['en-US']} - ${job.recommendationPerson['en-US']}` : null }
+              {job.recommendation ?
+                `${job.recommendation['en-US']} - ${job.recommendationPerson['en-US']}` 
+                : null }
               <br />
               <FlatButton label="stack" secondary />
-              {job.startDate ? <FlatButton label={job.startDate['en-US'].split('-')[0]} secondary /> : null}
+              {job.startDate
+                ? <FlatButton label={startYear(job)} secondary />
+                : null}
             </CardText>
           </Card>
         ) : null }

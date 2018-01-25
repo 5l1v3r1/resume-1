@@ -72,11 +72,10 @@ class App extends Component {
               render={({ match }) => (
                 <Menu
                   handleMenuChange={this.handleMenuChange}
-                  JobExpanded={match.params.project}
+                  initJobExpanded={match.params.project}
                   {...this.state}
                 />
-              )
-              }
+              )}
             />
             <Education />
             <Footer />
