@@ -14,7 +14,7 @@ const Footer = () => (
   <Row>
     <Col xs style={muiTheme.footerLink}>
       <a href="http:tgrrr.com">&copy; tgrrr.com</a><br />
-      <a href="http://github.com/tgrrr/resume"> how was this resume made?</a>
+      {/* <a href="http://github.com/tgrrr/resume"> how was this resume made?</a> */}
     </Col>
   </Row>
 );

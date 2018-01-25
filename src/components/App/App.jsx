@@ -41,8 +41,8 @@ class App extends Component {
 
   componentDidMount () {
     client.sync({
-      initial: true,
-      content_type: 'job'
+      initial: true
+      // content_type: 'job'
     })
       .then((response) => {
         const responseObj = JSON.parse(response.stringifySafe());
@@ -77,7 +77,7 @@ class App extends Component {
                 />
               )}
             />
-            <Education />
+            <Education {...this.state} />
             <Footer />
           </Grid>
         </MuiThemeProvider>
