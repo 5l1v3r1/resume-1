@@ -29,17 +29,15 @@ const Menu = ({ careerCategory, handleMenuChange, ...rest }) => (
 );
 
 Menu.propTypes = {
-  // careerCategory: PropTypes.string.isRequired,
+  careerCategory: PropTypes.oneOf(['Apps', 'Websites', 'Product', 'Film']),
   handleMenuChange: PropTypes.func,
-  isJobExpanded: PropTypes.bool,
-  careerCategory: PropTypes.oneOf(['Apps', 'Websites', 'Product', 'Film'])
+  isJobExpanded: PropTypes.bool
 };
 
 Menu.defaultProps = {
   careerCategory: 'Apps',
-  isJobExpanded: false,
-  handleMenuChange: null
+  handleMenuChange: null,
+  isJobExpanded: false
 };
 
 export default Menu;
-// export default withRouter(Menu);
