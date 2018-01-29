@@ -1,6 +1,6 @@
 import React from 'react';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import {Row, Col} from 'react-flexbox-grid';
+import { Row, Col } from 'react-flexbox-grid';
 
 const muiTheme = getMuiTheme({
   education: {
@@ -11,17 +11,7 @@ const muiTheme = getMuiTheme({
   }
 });
 
-// const Jobs = props =>
-//   (props.jobs.map((job, i) => (
-//     <Job
-//       key={job.fields.project['en-US']}
-//       id={i}
-//       job={job}
-//       isJobExpanded={(job.fields.project['en-US'] === props.initJobExpanded)}
-//     />
-//   )));
-
-const Education = ({jobs}) => (
+const Education = ({ jobs }) => (
   <div>
     <Row>
       <Col xs={12}>
@@ -30,8 +20,8 @@ const Education = ({jobs}) => (
     </Row>
     {jobs.map((job, i) => (
       <div key={i}>
-        {job.fields.institution ?
-          <Row style={muiTheme.education}>
+        {job.fields.institution
+          ? <Row style={muiTheme.education}>
             <Col xs={12} sm={8}>
               <strong>{job.fields.institution['en-US']}</strong>
             </Col>

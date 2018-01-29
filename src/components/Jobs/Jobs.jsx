@@ -17,12 +17,14 @@ const Jobs = props => (
         <Job
           id={i}
           job={job}
-          isJobExpanded={(job.fields.project['en-US'] === props.initJobExpanded)}
+          isInitJobExpanded={(job.fields.project['en-US'] === props.initJobExpanded)}
         />
       ) : null
       }
     </div>
   )));
+
+export default Jobs;
 
 class Job extends Component {
   constructor (props) {
@@ -32,15 +34,15 @@ class Job extends Component {
     };
   }
 
+  componentWillMount () {
+    this.setState({
+      expanded: this.props.isInitJobExpanded
+    });
+  }
+
   handleExpandChange = expanded => {
     this.setState({expanded: expanded});
   };
-
-  componentWillMount () {
-    this.setState({
-      expanded: this.props.isJobExpanded
-    });
-  }
 
   render () {
     const job = this.props.job.fields;
@@ -53,7 +55,7 @@ class Job extends Component {
         {job.project ? (
           <Card
             style={muiTheme.card}
-            expanded={this.state.isJobExpanded}
+            expanded={this.state.expanded}
             onExpandChange={this.handleExpandChange}
           >
             <CardHeader
@@ -95,11 +97,9 @@ const jobItemShape = {
 
 Job.propTypes = {
   job: PropTypes.objectOf((PropTypes.shape(jobItemShape))).isRequired,
-  isJobExpanded: PropTypes.bool
+  isInitJobExpanded: PropTypes.bool
 };
 
 Job.defaultProps = {
-  isJobExpanded: false
+  isInitJobExpanded: false
 };
-
-export default Jobs;

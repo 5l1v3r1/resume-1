@@ -31,13 +31,13 @@ const Menu = ({ careerCategory, handleMenuChange, ...rest }) => (
 Menu.propTypes = {
   careerCategory: PropTypes.oneOf(['Apps', 'Websites', 'Product', 'Film']),
   handleMenuChange: PropTypes.func,
-  isJobExpanded: PropTypes.bool
+  isInitJobExpanded: PropTypes.bool
 };
 
 Menu.defaultProps = {
   careerCategory: 'Apps',
   handleMenuChange: null,
-  isJobExpanded: false
+  isInitJobExpanded: false
 };
 
 export default Menu;
