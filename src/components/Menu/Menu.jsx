@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Row, Col } from 'react-flexbox-grid';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import { Tabs, Tab } from 'material-ui/Tabs';
-import Jobs from '../Job/Job';
+import Jobs from '../Jobs/Jobs';
 
 const muiTheme = getMuiTheme({
   tab: {
