@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Router, Route } from 'react-router-dom';
+import { Router, Route, Switch } from 'react-router-dom';
 import { Grid } from 'react-flexbox-grid';
 import * as contentful from 'contentful';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
@@ -67,16 +67,51 @@ class App extends Component {
           <Grid fluid style={muiTheme.container}>
             <Header />
             <Headline />
-            <Route
-              path="/:careerCategory/:project"
-              render={({ match }) => (
-                <Menu
-                  handleMenuChange={this.handleMenuChange}
-                  initJobExpanded={match.params.project}
-                  {...this.state}
-                />
-              )}
-            />
+            <Switch>
+              <Route
+                exact
+                path="/:careerCategory/:project"
+                render={({ match }) => (
+                  <Menu
+                    handleMenuChange={this.handleMenuChange}
+                    initJobExpanded={match.params.project}
+                    {...this.state}
+                  />
+                )}
+              />
+              <Route
+                exact
+                path="/:careerCategory"
+                render={({ match }) => (
+                  <Menu
+                    handleMenuChange={this.handleMenuChange}
+                    initJobExpanded={match.params.project}
+                    {...this.state}
+                  />
+                )}
+              />
+              <Route
+                exact
+                path="/"
+                render={({ match }) => (
+                  <Menu
+                    handleMenuChange={this.handleMenuChange}
+                    initJobExpanded={match.params.project}
+                    {...this.state}
+                  />
+                )}
+              />
+              <Route
+
+                render={({ match }) => (
+                  <Menu
+                    handleMenuChange={this.handleMenuChange}
+                    initJobExpanded={match.params.project}
+                    {...this.state}
+                  />
+                )}
+              />
+            </Switch>
             <Education {...this.state} />
             <Footer />
           </Grid>
