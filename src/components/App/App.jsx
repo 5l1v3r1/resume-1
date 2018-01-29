@@ -57,7 +57,7 @@ class App extends Component {
     this.setState({
       careerCategory
     });
-    history.push(careerCategory);
+    history.push(`/${careerCategory}`);
   }
 
   render () {
