@@ -15,7 +15,7 @@ const LeftHeadline = props => (
       <Col xs={12} md={2}>
         <h3>{props.children.props.name}</h3>
       </Col>
-      <Col xs={12} md={8}>
+      <Col xs={12} md={10}>
         {props.children}
       </Col>
     </Row>

@@ -13,31 +13,38 @@ const muiTheme = getMuiTheme({
     marginRight: 'auto',
     position: 'relative',
     display: 'inline-block',
-    alignContent: 'center',
+    alignContent: 'center'
   },
   raisedButton: {
-    margin: '21px',
+    marginTop: '21px',
+    float: 'right'
   }
 });
 
-const Header = () => {
-  return (
-    <div>
+const Header = () => (
+  // <Row center="xs">
+  <Row>
+    <Col xs={12} sm={4} md={4} lg={4}>
+      <h1> Phil Steinke </h1>
+    </Col>
+    <Col xs={12} sm={4} md={4} lg={4}>
       <Row center="xs">
-        <Col xs={12} sm={4} md={4} lg={4}>
-          <h1> Phil Steinke </h1>
-        </Col>
-        <Col xs={12} sm={4} md={4} lg={4}>
-          <Row center="xs">
-            <img src= {require(`../../images/philsteinke mugshot bw.png`)} alt="Phil Steinke" style={muiTheme.mugshot} />
-          </Row>
-        </Col>
-        <Col xs={12} sm={4} md={4} lg={4}>
-          <RaisedButton label='Get in touch' secondary={true} style={muiTheme.raisedButton} containerElement={<Link to="/contact" />} />
-        </Col>
+        <img
+          src={require(`../../images/philsteinke mugshot bw.png`)}
+          alt="Phil Steinke"
+          style={muiTheme.mugshot}
+        />
       </Row>
-    </div>
-  )
-}
+    </Col>
+    <Col xs={12} sm={4} md={4} lg={4}>
+      <RaisedButton
+        containerElement={<Link to="/contact" />}
+        label="Get in touch"
+        secondary
+        style={muiTheme.raisedButton}
+      />
+    </Col>
+  </Row>
+);
 
 export default Header;
