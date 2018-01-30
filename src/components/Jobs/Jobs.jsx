@@ -11,17 +11,15 @@ const muiTheme = getMuiTheme({
 });
 
 const Jobs = props => (
-  props.jobs.map((job, i) => (
-    <div key={i}>
-      {job.fields.project ? (
-        <Job
-          id={i}
-          job={job}
-          isInitJobExpanded={(job.fields.project['en-US'] === props.initJobExpanded)}
-        />
-      ) : null
-      }
-    </div>
+  props.jobs
+  .filter(job => job.fields.project)
+  .map((job, i) => (
+    <Job
+      id={i}
+      job={job}
+      isInitJobExpanded={(job.fields.project['en-US'] === props.initJobExpanded)}
+      key={i}
+    />
   )));
 
 export default Jobs;
