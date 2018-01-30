@@ -12,6 +12,7 @@ import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import Headline from '../Header/Headline';
 import MenuRouter from '../Menu/MenuRouter';
+import LeftHeadline from '../LeftHeadline';
 import './App.css';
 
 const muiTheme = getMuiTheme({
@@ -66,9 +67,15 @@ class App extends Component {
         <MuiThemeProvider muiTheme={getMuiTheme(ResumeBaseTheme)}>
           <Grid fluid style={muiTheme.container}>
             <Header />
-            <Headline />
-            <MenuRouter {...this.state} />
-            <Education {...this.state} />
+            <LeftHeadline>
+              <Headline name={this.state.careerCategory} {...this.state} />
+            </LeftHeadline>
+            <LeftHeadline>
+              <MenuRouter name="Key Projects" {...this.state} />
+            </LeftHeadline>
+            <LeftHeadline>
+              <Education name="Education" {...this.state} />
+            </LeftHeadline>
             <Footer />
           </Grid>
         </MuiThemeProvider>
