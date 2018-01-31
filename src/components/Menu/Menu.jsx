@@ -12,14 +12,14 @@ const muiTheme = getMuiTheme({
   }
 });
 
-const tabsHeaders = ['Apps', 'Websites', 'Product', 'Film'];
+const careerCategorys = ['Apps', 'Websites', 'Product', 'Film'];
 
 const Menu = ({ careerCategory, handleMenuChange, ...rest }) => (
   <Row>
     <Col xs>
       <Tabs value={careerCategory} onChange={handleMenuChange}>
-        {tabsHeaders.map((tabsHeader, i) => (
-          <Tab key={tabsHeader} label={tabsHeader} value={tabsHeader} style={muiTheme.tab}>
+        {careerCategorys.map((careerCategoryHeader, i) => (
+          <Tab key={careerCategoryHeader} label={careerCategoryHeader} value={careerCategoryHeader} style={muiTheme.tab}>
             <Jobs {...rest} />
           </Tab>
         ))}
