@@ -1,3 +1,45 @@
+# Expandable Resume
+
+## What does it do?
+
+- **tl;dr:** Speeds up matching the right person with a job
+- Quickly tailor resumes - Job seekers select the relevant jobs, and then click to tailor their resume
+- It then creates a unique PDF and website for each job they're applying for
+- Each section of the PDF resume has a brief description of each job.
+- Get more detail - Interviewers who want more details can click on each job, and see a more detailed CV with all of the details they might be looking for
+- Data driven - Provides a heatmap so we can see what interviewers care about, to provide a data driven way to automatically improve resumes
+- Imports history from Linkedin
+
+## Why did I build this?
+
+- It saves time for everyone
+- Stands out while applying for jobs
+
+#### Job hunters
+
+It's time consuming for candidates to:
+  - Update a resume
+  - Customise a resume for each position
+- We risk missing important points with cut down resumes
+
+#### Interviewer
+
+Find the right person
+- Great job hunters are too busy working on great projects, so don't apply.
+
+It's time consuming for interviewers to:
+- Read through a 6 page resume. This way they can see a short teaser resume, and get more detail if necessary.
+
+## Roadmap
+
+[Trello Roadmap](https://trello.com/c/kCaGWRXu) (private)
+
+#### Its a best guess why
+
+Job hunter -> Recruiter -> Automated filter -> Human Resources -> Interviewer -> Decision Maker
+               (maybe)      (maybe)
+
+
 
 | Left heading    | main content    | date   |     |
 | --------------- | --------------- | ------ | --- |
@@ -13,6 +55,7 @@
 | own PROJECTS    |                 |        |     |
 
 
+____________________________________________________________________
 
 ## Folder Structure
 
