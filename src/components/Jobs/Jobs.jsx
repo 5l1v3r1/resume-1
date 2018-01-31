@@ -10,37 +10,26 @@ const muiTheme = getMuiTheme({
   }
 });
 
-const Jobs = props => (
-  props.jobs
-  .filter(job => job.fields.project)
-  .map((job, i) => (
-    <Job
-      id={i}
-      job={job}
-      isInitJobExpanded={(job.fields.project['en-US'] === props.initJobExpanded)}
-      key={i}
-    />
-  )));
-
-export default Jobs;
-
 class Job extends Component {
   constructor (props) {
     super();
     this.state = {
-      expanded: false
+      isExpanded: false
     };
+    this.handleExpandChange = this.handleExpandChange.bind(this);
   }
 
   componentWillMount () {
     this.setState({
-      expanded: this.props.isInitJobExpanded
+      isExpanded: this.props.isInitJobExpanded
     });
   }
 
-  handleExpandChange = expanded => {
-    this.setState({expanded: expanded});
-  };
+  handleExpandChange () {
+    this.setState(prevState => ({
+      isExpanded: !prevState.isExpanded
+    }));
+  }
 
   render () {
     const job = this.props.job.fields;
@@ -53,8 +42,9 @@ class Job extends Component {
         {job.project ? (
           <Card
             style={muiTheme.card}
-            expanded={this.state.expanded}
+            expanded={this.state.isExpanded}
             onExpandChange={this.handleExpandChange}
+            // {handleExpandChange}
           >
             <CardHeader
               title={job.project ? job.project['en-US'] : null}
@@ -65,8 +55,8 @@ class Job extends Component {
             <CardText expandable>
               {job.description ? job.description['en-US'] : null}<br />
               <br />
-              {job.recommendation ?
-                `${job.recommendation['en-US']} - ${job.recommendationPerson['en-US']}`
+              {job.recommendation
+                ? `${job.recommendation['en-US']} - ${job.recommendationPerson['en-US']}`
                 : null }
               <br />
               <FlatButton label="stack" secondary />
@@ -101,3 +91,17 @@ Job.propTypes = {
 Job.defaultProps = {
   isInitJobExpanded: false
 };
+
+const Jobs = props => (
+  props.jobs
+    .filter(job => job.fields.project)
+    .map((job, i) => (
+      <Job
+        id={i}
+        job={job}
+        isInitJobExpanded={(job.fields.project['en-US'] === props.initJobExpanded)}
+        key={i}
+      />
+    )));
+
+export default Jobs;
