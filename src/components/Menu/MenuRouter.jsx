@@ -2,47 +2,35 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Menu from '../Menu/Menu';
 
+const routes = [
+  { path: '/:careerCategory/:project' },
+  { path: '/:careerCategory/' },
+  { path: '/' }
+];
+
+// const MenuPlaceholder = () => (
+//   <Menu
+//     initJobExpanded={match.params.project}
+//     {...props}
+//   />
+// );
+
 const MenuRouter = props => (
 
   <Switch>
-    <Route
-      exact
-      path="/:careerCategory/:project"
-      render={({ match }) => (
-        <Menu
-          initJobExpanded={match.params.project}
-          {...props}
-        />
-      )}
-    />
-    <Route
-      exact
-      path="/:careerCategory"
-      render={({ match }) => (
-        <Menu
-          initJobExpanded={match.params.project}
-          {...props}
-        />
-      )}
-    />
-    <Route
-      exact
-      path="/"
-      render={({ match }) => (
-        <Menu
-          initJobExpanded={match.params.project}
-          {...props}
-        />
-      )}
-    />
-    <Route
-      render={({ match }) => (
-        <Menu
-          initJobExpanded={match.params.project}
-          {...props}
-        />
-      )}
-    />
+    {routes.map(route => (
+      <Route
+        exact
+        key={route.path}
+        path={route.path}
+        render={({ match }) => (
+          <Menu
+            initJobExpanded={match.params.project}
+            {...props}
+          />
+        )}
+      />
+    ))}
   </Switch>
 );
 
