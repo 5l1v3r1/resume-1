@@ -19,7 +19,12 @@ const Menu = ({ careerCategory, handleMenuChange, ...rest }) => (
     <Col xs>
       <Tabs value={careerCategory} onChange={handleMenuChange}>
         {careerCategorys.map((careerCategoryHeader, i) => (
-          <Tab key={careerCategoryHeader} label={careerCategoryHeader} value={careerCategoryHeader} style={muiTheme.tab}>
+          <Tab
+            key={careerCategoryHeader}
+            label={careerCategoryHeader}
+            value={careerCategoryHeader}
+            style={muiTheme.tab}
+          >
             <Jobs {...rest} />
           </Tab>
         ))}
