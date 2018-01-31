@@ -10,7 +10,6 @@ const MenuRouter = props => (
       path="/:careerCategory/:project"
       render={({ match }) => (
         <Menu
-          handleMenuChange={this.handleMenuChange}
           initJobExpanded={match.params.project}
           {...props}
         />
@@ -21,7 +20,6 @@ const MenuRouter = props => (
       path="/:careerCategory"
       render={({ match }) => (
         <Menu
-          handleMenuChange={this.handleMenuChange}
           initJobExpanded={match.params.project}
           {...props}
         />
@@ -32,7 +30,6 @@ const MenuRouter = props => (
       path="/"
       render={({ match }) => (
         <Menu
-          handleMenuChange={this.handleMenuChange}
           initJobExpanded={match.params.project}
           {...props}
         />
@@ -41,7 +38,6 @@ const MenuRouter = props => (
     <Route
       render={({ match }) => (
         <Menu
-          handleMenuChange={this.handleMenuChange}
           initJobExpanded={match.params.project}
           {...props}
         />

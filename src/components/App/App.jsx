@@ -71,7 +71,11 @@ class App extends Component {
               <Headline name={this.state.careerCategory} {...this.state} />
             </LeftHeadline>
             <LeftHeadline>
-              <MenuRouter name="Key Projects" {...this.state} />
+              <MenuRouter
+                name="Key Projects"
+                handleMenuChange={this.handleMenuChange}
+                {...this.state}
+              />
             </LeftHeadline>
             <LeftHeadline>
               <Education name="Education" {...this.state} />
