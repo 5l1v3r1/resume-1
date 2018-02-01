@@ -35,7 +35,7 @@ class App extends Component {
     super();
     this.state = {
       jobs: [],
-      careerCategory: 'Apps'
+      jobType: 'Apps'
     };
     this.handleMenuChange = this.handleMenuChange.bind(this);
   }
@@ -54,11 +54,12 @@ class App extends Component {
       });
   }
 
-  handleMenuChange (careerCategory) {
+  handleMenuChange (jobType) {
     this.setState({
-      careerCategory
+      jobType
     });
-    history.push(`/${careerCategory}`);
+    history.push(`/${jobType}`);
+    // could be fixed here
   }
 
   render () {
@@ -68,7 +69,7 @@ class App extends Component {
           <Grid fluid style={muiTheme.container}>
             <Header />
             <LeftHeadline>
-              <Headline name={this.state.careerCategory} {...this.state} />
+              <Headline name={this.state.jobType} {...this.state} />
             </LeftHeadline>
             <LeftHeadline>
               <MenuRouter
