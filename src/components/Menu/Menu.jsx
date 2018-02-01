@@ -12,20 +12,20 @@ const muiTheme = getMuiTheme({
   }
 });
 
-const careerCategorys = ['Apps', 'Websites', 'Product', 'Film'];
+const jobTypes = ['Apps', 'Websites', 'Projects', 'Content'];
 
-const Menu = ({ careerCategory, handleMenuChange, ...rest }) => (
+const Menu = ({ jobType, handleMenuChange, ...rest }) => (
   <Row>
     <Col xs>
-      <Tabs value={careerCategory} onChange={handleMenuChange}>
-        {careerCategorys.map((careerCategoryHeader, i) => (
+      <Tabs value={jobType} onChange={handleMenuChange}>
+        {jobTypes.map((jobTypeHeader, i) => (
           <Tab
-            key={careerCategoryHeader}
-            label={careerCategoryHeader}
-            value={careerCategoryHeader}
+            key={i}
+            label={jobTypeHeader}
+            value={jobTypeHeader}
             style={muiTheme.tab}
           >
-            <Jobs {...rest} careerCategory={careerCategory} />
+            <Jobs jobType={jobType} {...rest} />
           </Tab>
         ))}
       </Tabs>
@@ -34,13 +34,12 @@ const Menu = ({ careerCategory, handleMenuChange, ...rest }) => (
 );
 
 Menu.propTypes = {
-  careerCategory: PropTypes.oneOf(['Apps', 'Websites', 'Product', 'Film']),
+  jobType: PropTypes.oneOf(['Apps', 'Websites', 'Content', 'Projects']).isRequired,
   handleMenuChange: PropTypes.func,
   isInitJobExpanded: PropTypes.bool
 };
 
 Menu.defaultProps = {
-  careerCategory: 'Apps',
   handleMenuChange: null,
   isInitJobExpanded: false
 };

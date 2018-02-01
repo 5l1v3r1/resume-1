@@ -87,25 +87,15 @@ Job.defaultProps = {
 
 const Jobs = props => (
   props.jobs
-    .filter(job => job.fields.careerCategory &&
-      props.careerCategory === job.fields.careerCategory['en-US'][0]
-      // .some((career, job, careerCategory, i) => career === job.fields.careerCategory['en-US']))
-    // .some((career, job, i) => career === job.fields.careerCategory['en-US'])
-      // .forEach(job, job.fields.careerCategory['en-US']))
-    // .map(career => carreer === 'Apps')
-    )
-    .map((job, i) => (
-      <div>
-        <Job
-          id={i}
-          job={job}
-          isInitJobExpanded={(job.fields.project['en-US'] === props.initJobExpanded)}
-          key={job.fields.project['en-US']}
-        />
-        {console.log(job.fields.careerCategory['en-US']
-          .find((career, i) => <div key={i}>{career}</div>))
-        }
-      </div>
-    )));
+    .filter(job => job.fields.jobType &&
+      props.jobType === job.fields.jobType['en-US']))
+  .map((job, i) => (
+    <Job
+      id={i}
+      job={job}
+      isInitJobExpanded={(job.fields.project['en-US'] === props.initJobExpanded)}
+      key={i}
+    />
+  ));
 
 export default Jobs;

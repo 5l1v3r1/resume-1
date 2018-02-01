@@ -3,8 +3,8 @@ import { Route, Switch } from 'react-router-dom';
 import Menu from '../Menu/Menu';
 
 const routes = [
-  { path: '/:careerCategory/:project' },
-  { path: '/:careerCategory/' },
+  { path: '/:jobType/:project' },
+  { path: '/:jobType/' },
   { path: '/' }
 ];
 
@@ -18,10 +18,10 @@ const routes = [
 const MenuRouter = props => (
 
   <Switch>
-    {routes.map(route => (
+    {routes.map((route, i) => (
       <Route
         exact
-        key={route.path}
+        key={i}
         path={route.path}
         render={({ match }) => (
           <Menu
