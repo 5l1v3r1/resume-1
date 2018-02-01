@@ -38,32 +38,28 @@ class Job extends Component {
       (job.startDate['en-US'].split('-')[0]);
 
     return (
-      <div>
-        {job.project && (
-          <Card
-            style={muiTheme.card}
-            expanded={this.state.isExpanded}
-            onExpandChange={this.handleExpandChange}
-          >
-            <CardHeader
-              title={job.project && job.project['en-US']}
-              subtitle={job.tagline && job.tagline['en-US']}
-              actAsExpander
-              showExpandableButton
-            />
-            <CardText expandable>
-              {job.description && job.description['en-US']}<br />
-              <br />
-              {job.recommendation &&
+      <Card
+        style={muiTheme.card}
+        expanded={this.state.isExpanded}
+        onExpandChange={this.handleExpandChange}
+      >
+        <CardHeader
+          title={job.project && job.project['en-US']}
+          subtitle={job.tagline && job.tagline['en-US']}
+          actAsExpander
+          showExpandableButton
+        />
+        <CardText expandable>
+          {job.description && job.description['en-US']}<br />
+          <br />
+          {job.recommendation &&
                 `${job.recommendation['en-US']} - ${job.recommendationPerson['en-US']}`
-              }
-              <br />
-              <FlatButton label="stack" secondary />
-              {job.startDate && <FlatButton label={startYear(job)} secondary />}
-            </CardText>
-          </Card>
-        ) }
-      </div>
+          }
+          <br />
+          <FlatButton label="stack" secondary />
+          {job.startDate && <FlatButton label={startYear(job)} secondary />}
+        </CardText>
+      </Card>
     );
   }
 }
