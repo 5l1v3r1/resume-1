@@ -39,33 +39,30 @@ class Job extends Component {
 
     return (
       <div>
-        {job.project ? (
+        {job.project && (
           <Card
             style={muiTheme.card}
             expanded={this.state.isExpanded}
             onExpandChange={this.handleExpandChange}
-            // {handleExpandChange}
           >
             <CardHeader
-              title={job.project ? job.project['en-US'] : null}
-              subtitle={job.tagline ? job.tagline['en-US'] : null}
+              title={job.project && job.project['en-US']}
+              subtitle={job.tagline && job.tagline['en-US']}
               actAsExpander
               showExpandableButton
             />
             <CardText expandable>
-              {job.description ? job.description['en-US'] : null}<br />
+              {job.description && job.description['en-US']}<br />
               <br />
-              {job.recommendation
-                ? `${job.recommendation['en-US']} - ${job.recommendationPerson['en-US']}`
-                : null }
+              {job.recommendation &&
+                `${job.recommendation['en-US']} - ${job.recommendationPerson['en-US']}`
+              }
               <br />
               <FlatButton label="stack" secondary />
-              {job.startDate
-                ? <FlatButton label={startYear(job)} secondary />
-                : null}
+              {job.startDate && <FlatButton label={startYear(job)} secondary />}
             </CardText>
           </Card>
-        ) : null }
+        ) }
       </div>
     );
   }
@@ -94,14 +91,25 @@ Job.defaultProps = {
 
 const Jobs = props => (
   props.jobs
-    .filter(job => job.fields.project)
+    .filter(job => job.fields.careerCategory &&
+      props.careerCategory === job.fields.careerCategory['en-US'][0]
+      // .some((career, job, careerCategory, i) => career === job.fields.careerCategory['en-US']))
+    // .some((career, job, i) => career === job.fields.careerCategory['en-US'])
+      // .forEach(job, job.fields.careerCategory['en-US']))
+    // .map(career => carreer === 'Apps')
+    )
     .map((job, i) => (
-      <Job
-        id={i}
-        job={job}
-        isInitJobExpanded={(job.fields.project['en-US'] === props.initJobExpanded)}
-        key={i}
-      />
+      <div>
+        <Job
+          id={i}
+          job={job}
+          isInitJobExpanded={(job.fields.project['en-US'] === props.initJobExpanded)}
+          key={job.fields.project['en-US']}
+        />
+        {console.log(job.fields.careerCategory['en-US']
+          .find((career, i) => <div key={i}>{career}</div>))
+        }
+      </div>
     )));
 
 export default Jobs;

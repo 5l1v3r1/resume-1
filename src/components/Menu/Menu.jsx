@@ -25,7 +25,7 @@ const Menu = ({ careerCategory, handleMenuChange, ...rest }) => (
             value={careerCategoryHeader}
             style={muiTheme.tab}
           >
-            <Jobs {...rest} />
+            <Jobs {...rest} careerCategory={careerCategory} />
           </Tab>
         ))}
       </Tabs>

@@ -31,7 +31,7 @@ const Education = ({ jobs }) => (
             {job.fields.qualification['en-US']}
           </Col>
           <Col xs={12}>
-            <i>{job.fields.focus ? job.fields.focus['en-US'] : null }</i>
+            <i>{job.fields.focus && job.fields.focus['en-US'] }</i>
           </Col>
         </Row>
       ))}
