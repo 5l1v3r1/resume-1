@@ -32,10 +32,10 @@ class Job extends Component {
   }
 
   render () {
-    const job = this.props.job.fields;
+    const entry = this.props.entry.fields;
 
     const startYear = () =>
-      (job.startDate['en-US'].split('-')[0]);
+      (entry.startDate['en-US'].split('-')[0]);
 
     return (
       <Card
@@ -44,20 +44,20 @@ class Job extends Component {
         onExpandChange={this.handleExpandChange}
       >
         <CardHeader
-          title={job.project && job.project['en-US']}
-          subtitle={job.tagline && job.tagline['en-US']}
+          title={entry.project && entry.project['en-US']}
+          subtitle={entry.tagline && entry.tagline['en-US']}
           actAsExpander
           showExpandableButton
         />
         <CardText expandable>
-          {job.description && job.description['en-US']}<br />
+          {entry.description && entry.description['en-US']}<br />
           <br />
-          {job.recommendation &&
-                `${job.recommendation['en-US']} - ${job.recommendationPerson['en-US']}`
+          {entry.recommendation &&
+                `${entry.recommendation['en-US']} - ${entry.recommendationPerson['en-US']}`
           }
           <br />
           <FlatButton label="stack" secondary />
-          {job.startDate && <FlatButton label={startYear(job)} secondary />}
+          {entry.startDate && <FlatButton label={startYear(entry)} secondary />}
         </CardText>
       </Card>
     );
@@ -77,7 +77,7 @@ const jobItemShape = {
 };
 
 Job.propTypes = {
-  job: PropTypes.objectOf((PropTypes.shape(jobItemShape))).isRequired,
+  entry: PropTypes.objectOf((PropTypes.shape(jobItemShape))).isRequired,
   isInitJobExpanded: PropTypes.bool
 };
 
@@ -87,13 +87,13 @@ Job.defaultProps = {
 
 const Jobs = props => (
   props.jobs
-    .filter(job => job.fields.jobType &&
-      props.jobType === job.fields.jobType['en-US']))
-  .map((job, i) => (
+    .filter(entry => entry.fields.jobType &&
+      props.jobType === entry.fields.jobType['en-US']))
+  .map((entry, i) => (
     <Job
       id={i}
-      job={job}
-      isInitJobExpanded={(job.fields.project['en-US'] === props.initJobExpanded)}
+      entry={entry}
+      isInitJobExpanded={(entry.fields.project['en-US'] === props.initJobExpanded)}
       key={i}
     />
   ));

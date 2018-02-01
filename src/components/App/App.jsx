@@ -43,7 +43,7 @@ class App extends Component {
   componentDidMount () {
     client.sync({
       initial: true
-      // content_type: 'job'
+      // content_type: 'entry'
     })
       .then((response) => {
         const responseObj = JSON.parse(response.stringifySafe());

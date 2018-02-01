@@ -14,24 +14,24 @@ const muiTheme = getMuiTheme({
 const Education = ({ jobs }) => (
   <div>
     {jobs
-      .filter(job => job.fields.institution)
-      .map((job, i) => (
+      .filter(entry => entry.fields.institution)
+      .map((entry, i) => (
         <Row style={muiTheme.education} key={i}>
           <Col xs={12} sm={8}>
-            <strong>{job.fields.institution['en-US']}</strong>
+            <strong>{entry.fields.institution['en-US']}</strong>
           </Col>
           <Col xs={12} sm={4}>
             <Row end="sm">
               <Col xs>
-                {job.fields.yearRange['en-US']}
+                {entry.fields.yearRange['en-US']}
               </Col>
             </Row>
           </Col>
           <Col xs={12}>
-            {job.fields.qualification['en-US']}
+            {entry.fields.qualification['en-US']}
           </Col>
           <Col xs={12}>
-            <i>{job.fields.focus && job.fields.focus['en-US'] }</i>
+            <i>{entry.fields.focus && entry.fields.focus['en-US'] }</i>
           </Col>
         </Row>
       ))}
