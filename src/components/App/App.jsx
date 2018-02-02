@@ -48,7 +48,7 @@ class App extends Component {
       .then((response) => {
         const responseObj = JSON.parse(response.stringifySafe());
         const { entries } = responseObj;
-        this.setState({ entries: entries });
+        this.setState({ entries });
         // window.localStorage.setItem('contentfulEntries', JSON.stringify(entries));
         // const cachedJobs = window.localStorage.getItem('contentfulEntries');
       });

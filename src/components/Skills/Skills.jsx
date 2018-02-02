@@ -1,24 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import FlatButton from 'material-ui/FlatButton';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import Chip from 'material-ui/Chip';
 import Avatar from 'material-ui/Avatar';
-import { Row, Col } from 'react-flexbox-grid';
 
 const muiTheme = getMuiTheme({
   chip: {
-    margin: 4
+    margin: 4,
+    float: 'left'
   },
   chipWrapper: {
-    display: 'flex',
-    flexWrap: 'wrap'
+    display: 'block'
   }
 });
 
 const Skills = ({ entry }) => (
-  entry.stack['en-US'].map((stackItem, i) =>
-    <Skill key={i} id={i} stack={stackItem} />));
+  entry.stack['en-US'].map((stackItem, i) => (
+    <div style={muiTheme.chipWrapper}>
+      <Skill key={i} id={i} stack={stackItem} />
+    </div>
+  )));
 
 const Skill = ({ stack }) => (
   <Chip style={muiTheme.chip}>
@@ -32,7 +33,10 @@ const skillsItemShape = {
 };
 
 Skills.propTypes = {
-  entry: PropTypes.objectOf((PropTypes.shape(skillsItemShape))).isRequired,
+  entry: PropTypes.objectOf((PropTypes.shape(skillsItemShape))).isRequired
+};
+
+Skill.propTypes = {
   stack: PropTypes.objectOf.isRequired
 };
 

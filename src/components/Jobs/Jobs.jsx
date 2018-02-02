@@ -34,9 +34,7 @@ class Job extends Component {
 
   render () {
     const entry = this.props.entry.fields;
-
-    const startYear = () =>
-      (entry.startDate['en-US'].split('-')[0]);
+    const StartYear = () => entry.startDate && <FlatButton label={(entry.startDate['en-US'].split('-')[0])} secondary />;
 
     return (
       <Card
@@ -54,11 +52,14 @@ class Job extends Component {
           {entry.description && entry.description['en-US']}<br />
           <br />
           {entry.recommendation &&
-                `${entry.recommendation['en-US']} - ${entry.recommendationPerson['en-US']}`
+            `${entry.recommendation['en-US']} - ${entry.recommendationPerson['en-US']}`
           }
+          <br />
           <FlatButton label={entry.stackLabels['en-US'][0]} secondary />
           <Skills entry={entry} />
-          {entry.startDate && <FlatButton label={startYear(entry)} secondary />}
+          <div style={{ clear: 'left' }} />
+          <br />
+          <StartYear />
         </CardText>
       </Card>
     );
@@ -92,10 +93,10 @@ const Jobs = props => (
     props.jobType === entry.fields.jobType['en-US']))
   .map((entry, i) => (
     <Job
-      id={i}
+      id={entry.sys.id}
       entry={entry}
       isInitJobExpanded={(entry.fields.project['en-US'] === props.initJobExpanded)}
-      key={i}
+      key={entry.sys.id}
     />
   ));
 
