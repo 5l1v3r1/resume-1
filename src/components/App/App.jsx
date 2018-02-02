@@ -34,7 +34,7 @@ class App extends Component {
   constructor () {
     super();
     this.state = {
-      jobs: [],
+      entries: [],
       jobType: 'Apps'
     };
     this.handleMenuChange = this.handleMenuChange.bind(this);
@@ -48,7 +48,7 @@ class App extends Component {
       .then((response) => {
         const responseObj = JSON.parse(response.stringifySafe());
         const { entries } = responseObj;
-        this.setState({ jobs: entries });
+        this.setState({ entries: entries });
         // window.localStorage.setItem('contentfulEntries', JSON.stringify(entries));
         // const cachedJobs = window.localStorage.getItem('contentfulEntries');
       });

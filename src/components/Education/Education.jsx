@@ -11,10 +11,10 @@ const muiTheme = getMuiTheme({
   }
 });
 
-const Education = ({ jobs }) => (
+const Education = ({ entries }) => (
   <div>
-    {jobs
-      .filter(entry => entry.fields.institution)
+    {entries
+      .filter(entry => entry.sys.contentType.sys.id === 'education')
       .map((entry, i) => (
         <Row style={muiTheme.education} key={i}>
           <Col xs={12} sm={8}>

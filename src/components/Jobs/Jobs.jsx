@@ -86,9 +86,9 @@ Job.defaultProps = {
 };
 
 const Jobs = props => (
-  props.jobs
-    .filter(entry => entry.fields.jobType &&
-      props.jobType === entry.fields.jobType['en-US']))
+  props.entries
+    .filter(entry => entry.sys.contentType.sys.id === 'job' &&
+    props.jobType === entry.fields.jobType['en-US']))
   .map((entry, i) => (
     <Job
       id={i}

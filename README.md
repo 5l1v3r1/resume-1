@@ -1,9 +1,14 @@
 # Expandable Resume
 
+## How to use this:
+You can find my Frontend Developer Resume here.
+
+For each job, the company has the option to click on the link and learn more about the job.
+
 ## What does it do?
 
 - **tl;dr:** Speeds up matching the right person with a job
-- Quickly tailor resumes - Job seekers select the relevant jobs, and then click to tailor their resume
+- Quickly tailor resumes - Job seekers select the relevant entries, and then click to tailor their resume
 - It then creates a unique PDF and website for each job they're applying for
 - Each section of the PDF resume has a brief description of each job.
 - Get more detail - Interviewers who want more details can click on each job, and see a more detailed CV with all of the details they might be looking for
@@ -11,9 +16,12 @@
 - Imports history from Linkedin
 
 ## Why did I build this?
-
+- Single page resume's are great, and I found myself wanting to provide more details if people asked.
 - It saves time for everyone
-- Stands out while applying for jobs
+- Stands out while applying for entries
+- Caters for people who want a preview of a resume, and for those wanting more detail
+
+## Benefits for:
 
 #### Job hunters
 
@@ -54,6 +62,19 @@ Job hunter -> Recruiter -> Automated filter -> Human Resources -> Interviewer ->
 | previous        |                 |        |     |
 | own PROJECTS    |                 |        |     |
 
+
+____________________________________________________________________
+
+# Features
+
+## Built with:
+- Serverless
+- React.js
+- ES6 Javascript ECMA6
+- CSS in JS - Coming soon
+- [Contentful CMS](http://contentful.com)
+- [Material UI](http://www.material-ui.com/#/)
+- [Create React App](https://github.com/facebook/create-react-app)
 
 ____________________________________________________________________
 
