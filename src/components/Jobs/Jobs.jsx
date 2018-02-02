@@ -34,7 +34,7 @@ class Job extends Component {
 
   render () {
     const entry = this.props.entry.fields;
-    const StartYear = () => entry.startDate && <FlatButton label={(entry.startDate['en-US'].split('-')[0])} secondary />;
+    const StartYear = () => (entry.startDate ? <FlatButton label={(entry.startDate['en-US'].split('-')[0])} secondary /> : null);
 
     return (
       <Card
@@ -56,7 +56,7 @@ class Job extends Component {
           }
           <br />
           {entry.stackLabels && <FlatButton label={entry.stackLabels['en-US'][0]} secondary />}
-          {entry.stack && <Skills entry={entry} />}
+          {entry.stack ? <Skills entry={entry} /> : null }
           <div style={{ clear: 'left' }} />
           <br />
           <StartYear />

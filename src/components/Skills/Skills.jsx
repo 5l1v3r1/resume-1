@@ -16,6 +16,7 @@ const muiTheme = getMuiTheme({
 
 const Skills = ({ entry }) => (
   entry.stack['en-US'].map((stackItem, i) => (
+    entry.stack &&
     <div style={muiTheme.chipWrapper}>
       <Skill key={i} id={i} stack={stackItem} />
     </div>
@@ -24,7 +25,7 @@ const Skills = ({ entry }) => (
 const Skill = ({ stack }) => (
   <Chip style={muiTheme.chip}>
     <Avatar size={32}>{String(stack).charAt(0)}</Avatar>
-    {stack}
+    { stack }
   </Chip>
 );
 
