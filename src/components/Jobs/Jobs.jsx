@@ -55,8 +55,8 @@ class Job extends Component {
             `${entry.recommendation['en-US']} - ${entry.recommendationPerson['en-US']}`
           }
           <br />
-          <FlatButton label={entry.stackLabels['en-US'][0]} secondary />
-          <Skills entry={entry} />
+          {entry.stackLabels && <FlatButton label={entry.stackLabels['en-US'][0]} secondary />}
+          {entry.stack && <Skills entry={entry} />}
           <div style={{ clear: 'left' }} />
           <br />
           <StartYear />
