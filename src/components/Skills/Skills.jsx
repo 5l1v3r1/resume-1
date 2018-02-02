@@ -16,36 +16,24 @@ const muiTheme = getMuiTheme({
   }
 });
 
-const Skills = entry => (
-  <Row>
-    <Col xs={12} sm={2}>
-      <FlatButton label={entry.skill.fields.stackLabels} primary />
-    </Col>
-    <Col xs={12} sm={10}>
-      <div style={muiTheme.chipWrapper}>
-        {/* {JSON.stringify(this.props.skill.fields.stack)} */}
-        {
-          entry.skill.fields.stack.map((stackio, i) => (
-            <Chip key={i} style={muiTheme.chip}>
-              <Avatar size={32}>
-                {String(stackio).charAt(0)}
-              </Avatar>
-              {stackio}
-            </Chip>
-          ))
-        }
-      </div>
-    </Col>
-  </Row>
+const Skills = ({ entry }) => (
+  entry.stack['en-US'].map((stackItem, i) =>
+    <Skill key={i} id={i} stack={stackItem} />));
+
+const Skill = ({ stack }) => (
+  <Chip style={muiTheme.chip}>
+    <Avatar size={32}>{String(stack).charAt(0)}</Avatar>
+    {stack}
+  </Chip>
 );
 
 const skillsItemShape = {
-  stack: PropTypes.objectOf,
-  stackLabels: PropTypes.objectOf
+  stack: PropTypes.objectOf
 };
 
 Skills.propTypes = {
-  entry: PropTypes.objectOf((PropTypes.shape(skillsItemShape))).isRequired
+  entry: PropTypes.objectOf((PropTypes.shape(skillsItemShape))).isRequired,
+  stack: PropTypes.objectOf.isRequired
 };
 
 export default Skills;

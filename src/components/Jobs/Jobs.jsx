@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Card, CardHeader, CardText } from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import Skills from '../Skills/Skills';
 
 const muiTheme = getMuiTheme({
   card: {
@@ -55,8 +56,8 @@ class Job extends Component {
           {entry.recommendation &&
                 `${entry.recommendation['en-US']} - ${entry.recommendationPerson['en-US']}`
           }
-          <br />
-          <FlatButton label="stack" secondary />
+          <FlatButton label={entry.stackLabels['en-US'][0]} secondary />
+          <Skills entry={entry} />
           {entry.startDate && <FlatButton label={startYear(entry)} secondary />}
         </CardText>
       </Card>
