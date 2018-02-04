@@ -15,12 +15,14 @@ const muiTheme = getMuiTheme({
 });
 
 const Skills = ({ entry }) => (
-  entry.stack['en-US'].map((stackItem, i) => (
-    entry.stack &&
-    <div style={muiTheme.chipWrapper}>
-      <Skill key={i} id={i} stack={stackItem} />
-    </div>
-  )));
+  <div style={muiTheme.chipWrapper}>
+    {entry.stack['en-US'].map((stackItem, i) => (
+      entry.stack &&
+        <Skill key={stackItem} stack={stackItem} />
+    ))}
+
+  </div>
+);
 
 const Skill = ({ stack }) => (
   <Chip style={muiTheme.chip}>
@@ -38,7 +40,11 @@ Skills.propTypes = {
 };
 
 Skill.propTypes = {
-  stack: PropTypes.objectOf.isRequired
+  stack: PropTypes.string
+};
+
+Skill.defaultProps = {
+  stack: null
 };
 
 export default Skills;

@@ -43,7 +43,6 @@ class App extends Component {
   componentDidMount () {
     client.sync({
       initial: true
-      // content_type: 'entry'
     })
       .then((response) => {
         const responseObj = JSON.parse(response.stringifySafe());
@@ -59,7 +58,6 @@ class App extends Component {
       jobType
     });
     history.push(`/${jobType}`);
-    // could be fixed here
   }
 
   render () {
