@@ -26,14 +26,14 @@ exports.default = {
     canvasColor: _colors.grey50,
     textColor: _colors.black,
     alternateTextColor: _colors.white,
-    // secondaryTextColor: _colors.darkOrange400,
+    secondaryTextColor: _colors.darkOrange400,
     primary1Color: '#005690',
-    primary2Color: '#005690',
-    // primary3Color: _colors.blueGrey300,
-    accent1Color: '#005690'
-    // accent2Color: _colors.darkOrange400,
-    // accent3Color: _colors.darkOrange100,
-    // borderColor: _colors.blue600
+    primary2Color: _colors.white,
+    primary3Color: _colors.blueGrey300,
+    accent1Color: '#005690',
+    accent2Color: _colors.darkOrange400,
+    accent3Color: _colors.darkOrange100,
+    borderColor: _colors.blue600
     // disabledColor: (0, _colorManipulator.fade)(_colors.fullWhite, 0.3),
     // pickerHeaderColor: (0, _colorManipulator.fade)(_colors.fullWhite, 0.12),
     // clockCircleColor: (0, _colorManipulator.fade)(_colors.fullWhite, 0.12)
