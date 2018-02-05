@@ -35,6 +35,7 @@ class Job extends Component {
     const entry = this.props.entry.fields;
     const StartYear = (entry.startDate ? entry.startDate['en-US'].split('-')[0] : '');
     const tagline = (entry.tagline && `${entry.tagline['en-US']} ${StartYear ? ` – ${StartYear}` : ''}`);
+    const isExpandable = entry.description && entry.description['en-US'] !== '';
 
     return (
       <Card
@@ -45,8 +46,8 @@ class Job extends Component {
         <CardHeader
           title={entry.project && entry.project['en-US']}
           subtitle={tagline}
-          actAsExpander
-          showExpandableButton
+          actAsExpander={isExpandable}
+          showExpandableButton={isExpandable}
         />
         <CardText expandable>
           {entry.description && entry.description['en-US']}<br />
