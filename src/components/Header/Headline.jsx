@@ -1,7 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Route, Switch } from 'react-router-dom';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import PropTypes from 'prop-types';
+import { Row, Col } from 'react-flexbox-grid';
+import { Route, Switch } from 'react-router-dom';
 import ContactModal from './ContactModal';
 import profilePhoto from '../../images/philsteinke mugshot bw.png';
 
@@ -14,6 +15,9 @@ const muiTheme = getMuiTheme({
   },
   profilePhotoWrapper: {
     margin: 30
+  },
+  headlineDescription: {
+    textAlign: 'justify'
   }
 });
 
@@ -22,14 +26,18 @@ const Child = props => (
     .filter(entry => entry.sys.contentType.sys.id === 'jobTypes' &&
             props.jobType === entry.fields.jobType['en-US']))
   .map((entry, i) => (
-    <div key={entry}>
-      <img
-        src={profilePhoto}
-        alt="Phil Steinke"
-        style={muiTheme.profilePhoto}
-      />
-      {entry.fields.description['en-US']}
-    </div>
+    <Row key={entry}>
+      <Col xs={1} >
+        <img
+          src={profilePhoto}
+          alt="Phil Steinke"
+          style={muiTheme.profilePhoto}
+        />
+      </Col>
+      <Col xsOffset={1} xs={10} style={muiTheme.headlineDescription}>
+        {entry.fields.description['en-US']}
+      </Col>
+    </Row>
   ));
 
 const Headline = props => (
