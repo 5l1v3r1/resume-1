@@ -13,7 +13,6 @@ import Header from '../Header/Header';
 import Headline from '../Header/Headline';
 import MenuRouter from '../Menu/MenuRouter';
 import LeftHeadline from '../LeftHeadline';
-import './App.css';
 
 const muiTheme = getMuiTheme({
   container: {
