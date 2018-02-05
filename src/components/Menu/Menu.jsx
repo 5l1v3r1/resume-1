@@ -18,9 +18,9 @@ const Menu = ({ jobType, handleMenuChange, ...rest }) => (
   <Row>
     <Col xs>
       <Tabs value={jobType} onChange={handleMenuChange}>
-        {jobTypes.map((jobTypeHeader, i) => (
+        {jobTypes.map(jobTypeHeader => (
           <Tab
-            key={i}
+            key={jobTypeHeader}
             label={jobTypeHeader}
             value={jobTypeHeader}
             style={muiTheme.tab}
