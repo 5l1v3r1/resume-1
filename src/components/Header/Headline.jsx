@@ -28,7 +28,6 @@ const Child = props => (
         alt="Phil Steinke"
         style={muiTheme.profilePhoto}
       />
-      <h1>{entry.fields.jobType['en-US']}</h1>
       {entry.fields.description['en-US']}
     </div>
   ));

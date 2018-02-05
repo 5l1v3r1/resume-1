@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { Row, Col } from 'react-flexbox-grid';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import RaisedButton from 'material-ui/RaisedButton';
-import profilePhoto from '../../images/philsteinke mugshot bw.png';
 
 const muiTheme = getMuiTheme({
   profilePhoto: {
@@ -25,19 +24,10 @@ const muiTheme = getMuiTheme({
 const Header = () => (
   // <Row center="xs">
   <Row>
-    <Col xs={12} sm={4} md={4} lg={4}>
+    <Col xs={12} sm={6} md={6} lg={6}>
       <h1> Phil Steinke </h1>
     </Col>
-    <Col xs={12} sm={4} md={4} lg={4}>
-      <Row center="xs">
-        <img
-          src={profilePhoto}
-          alt="Phil Steinke"
-          style={muiTheme.profilePhoto}
-        />
-      </Row>
-    </Col>
-    <Col xs={12} sm={4} md={4} lg={4}>
+    <Col xs={12} sm={6} md={6} lg={6}>
       <RaisedButton
         containerElement={<Link to="/contact" />}
         label="Get in touch"
