@@ -67,7 +67,7 @@ class App extends Component {
           <Grid fluid style={muiTheme.container}>
             <Header />
             <LeftHeadline>
-              <Headline {...this.state} />
+              <Headline name={this.state.jobType} {...this.state} />
             </LeftHeadline>
             <LeftHeadline>
               <MenuRouter
