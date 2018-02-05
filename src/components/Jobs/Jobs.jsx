@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Card, CardHeader, CardText } from 'material-ui/Card';
-import FlatButton from 'material-ui/FlatButton';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import Skills from '../Skills/Skills';
 
@@ -34,7 +33,8 @@ class Job extends Component {
 
   render () {
     const entry = this.props.entry.fields;
-    const StartYear = () => (entry.startDate ? <FlatButton label={(entry.startDate['en-US'].split('-')[0])} secondary /> : null);
+    const StartYear = (entry.startDate ? entry.startDate['en-US'].split('-')[0] : '');
+    const tagline = (entry.tagline && `${entry.tagline['en-US']} ${StartYear ? ` – ${StartYear}` : ''}`);
 
     return (
       <Card
@@ -44,22 +44,26 @@ class Job extends Component {
       >
         <CardHeader
           title={entry.project && entry.project['en-US']}
-          subtitle={entry.tagline && entry.tagline['en-US']}
+          subtitle={tagline}
           actAsExpander
           showExpandableButton
         />
         <CardText expandable>
           {entry.description && entry.description['en-US']}<br />
           <br />
-          {entry.recommendation &&
-            `${entry.recommendation['en-US']} - ${entry.recommendationPerson['en-US']}`
-          }
+
+          {entry.recommendation && (
+            <div>
+              <h4>Recommendation</h4>
+              {entry.recommendation['en-US']}
+              <p />
+               - <i>{entry.recommendationPerson['en-US']}</i>
+            </div>
+          )}
           <br />
-          {entry.stackLabels && <FlatButton label={entry.stackLabels['en-US'][0]} secondary />}
+          {entry.stackLabels && <h4>{entry.stackLabels['en-US'][0]} Stack</h4>}
           {entry.stack ? <Skills entry={entry} /> : null }
           <div style={{ clear: 'left' }} />
-          <br />
-          <StartYear />
         </CardText>
       </Card>
     );
