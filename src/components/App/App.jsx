@@ -6,7 +6,7 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 // import { deliveryAccessToken, spaceId } from '../../config';
 import history from '../../history';
-import ResumeBaseTheme from '../../resumeBaseTheme';
+import ResumeBaseTheme from '../../theme/resumeBaseTheme';
 import Education from '../Education/Education';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
@@ -21,6 +21,9 @@ const muiTheme = getMuiTheme({
     marginLeft: 'auto',
     marginRight: 'auto',
     display: 'block'
+  },
+  raisedButton: {
+    color: '#000000'
   }
 });
 
