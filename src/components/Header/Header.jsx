@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { Row, Col } from 'react-flexbox-grid';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import RaisedButton from 'material-ui/RaisedButton';
@@ -22,7 +21,7 @@ const muiTheme = getMuiTheme({
   }
 });
 
-const Header = () => (
+const Header = ({ handleContactClick }) => (
   <Row>
     <Col xs={12} sm={6} md={2} lg={2}>
       <h1>Phil Steinke</h1>
@@ -32,10 +31,10 @@ const Header = () => (
     </Col>
     <Col xs={12} sm={6} md={4} lg={4}>
       <RaisedButton
-        containerElement={<Link to="/contact" />}
         label="Get in touch"
         secondary
         style={muiTheme.raisedButton}
+        onClick={handleContactClick}
       />
     </Col>
   </Row>

@@ -21,6 +21,29 @@ const muiTheme = getMuiTheme({
   }
 });
 
+const Headline = props => (
+  <Switch>
+    <Route
+      exact
+      path="/contact"
+      render={({ location }) =>
+        (<ContactModal
+          {...props}
+          path={location.pathname}
+        />)}
+    />
+    <Route
+      exact
+      path={props.jobTypes}
+      render={({ location }) =>
+        (<Child
+          {...props}
+          path={location.pathname}
+        />)}
+    />
+  </Switch>
+);
+
 const Child = props => (
   props.entries
     .filter(entry => entry.sys.contentType.sys.id === 'jobTypes' &&
@@ -39,17 +62,6 @@ const Child = props => (
       </Col>
     </Row>
   ));
-
-const Headline = props => (
-  <Switch>
-    <Route exact path="/contact" component={ContactModal} />
-    <Route
-      exact
-      path={props.jobTypes}
-      render={({ location }) => <Child {...props} path={location.pathname} />}
-    />
-  </Switch>
-);
 
 Headline.propTypes = {
   jobTypes: PropTypes.string

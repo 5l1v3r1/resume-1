@@ -37,9 +37,11 @@ class App extends Component {
     super();
     this.state = {
       entries: [],
-      jobType: 'Apps'
+      jobType: 'About',
+      headline: []
     };
     this.handleMenuChange = this.handleMenuChange.bind(this);
+    this.handleContactClick = this.handleContactClick.bind(this);
   }
 
   componentDidMount () {
@@ -55,9 +57,17 @@ class App extends Component {
       });
   }
 
+  handleContactClick = () => {
+    this.setState({
+      headline: 'Contact'
+    });
+    history.push('/Contact');
+  }
+
   handleMenuChange (jobType) {
     this.setState({
-      jobType
+      jobType,
+      headline: jobType
     });
     history.push(`/${jobType}`);
   }
@@ -68,8 +78,9 @@ class App extends Component {
         <MuiThemeProvider muiTheme={getMuiTheme(ResumeBaseTheme)}>
           <Grid fluid style={muiTheme.container}>
             <Header />
+            <Header name="contact" handleContactClick={this.handleContactClick} />
             <LeftHeadline>
-              <Headline name={this.state.jobType} {...this.state} />
+              <Headline name={this.state.headline} {...this.state} />
             </LeftHeadline>
             <LeftHeadline>
               <MenuRouter

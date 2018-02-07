@@ -34,7 +34,7 @@ const Menu = ({ jobType, handleMenuChange, ...rest }) => (
 );
 
 Menu.propTypes = {
-  jobType: PropTypes.oneOf(['Apps', 'Websites', 'Content', 'Projects']).isRequired,
+  jobType: PropTypes.oneOf(['Apps', 'Websites', 'Content', 'Projects', 'About', 'Contact']).isRequired,
   handleMenuChange: PropTypes.func,
   isInitJobExpanded: PropTypes.bool
 };
