@@ -1480,7 +1480,7 @@ Then run the `firebase init` command from your project’s root. You need to cho
 
     Your public directory is the folder (relative to your project directory) that
     will contain Hosting assets to uploaded with firebase deploy. If you
-    have a build process for your assets, use your build's output directory.
+    have a build process for your assets, use your builds output directory.
 
     ? What do you want to use as your public directory? build
     ? Configure as a single-page app (rewrite all urls to /index.html)? Yes
@@ -1578,7 +1578,7 @@ The `predeploy` script will run automatically before `deploy` is run.
 If you are deploying to a GitHub user page instead of a project page you'll need to make two
 additional modifications:
 
-1. First, change your repository's source branch to be any branch other than **master**.
+1. First, change your repositorys source branch to be any branch other than **master**.
 1. Additionally, tweak your `package.json` scripts to push deployments to **master**:
 ```diff
   "scripts": {
@@ -1673,9 +1673,7 @@ With this setup Netlify will build and deploy when you push to git or open a pul
 
 To support `pushState`, make sure to create a `public/_redirects` file with the following rewrite rules:
 
-```
-/*  /index.html  200
-```
+ /*  /index.html  200 `
 
 When you build the project, Create React App will place the `public` folder contents into the build output.
 
