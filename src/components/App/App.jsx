@@ -51,6 +51,14 @@ class App extends Component {
       .then((response) => {
         const responseObj = JSON.parse(response.stringifySafe());
         const { entries } = responseObj;
+        // console.log(entries);
+        // console.log(entries.fields.startDate['en-US'].sort((a, b) => {
+        //   const aOrderNum = (a.orderNum === undefined) ? -1 : a.orderNum;
+        //   const bOrderNum = (b.orderNum === undefined) ? -1 : b.orderNum;
+        //   return bOrderNum - aOrderNum;
+        // }));
+
+        // console.log(entries.sort((a, b) => b.entry - a.entry));
         this.setState({ entries });
         // window.localStorage.setItem('contentfulEntries', JSON.stringify(entries));
         // const cachedJobs = window.localStorage.getItem('contentfulEntries');
@@ -77,20 +85,18 @@ class App extends Component {
       <Router history={history}>
         <MuiThemeProvider muiTheme={getMuiTheme(ResumeBaseTheme)}>
           <Grid fluid style={muiTheme.container}>
-            <Header />
-            <Header name="contact" handleContactClick={this.handleContactClick} />
-            <LeftHeadline>
-              <Headline name={this.state.headline} {...this.state} />
+            <Header handleContactClick={this.handleContactClick} />
+            <LeftHeadline name={this.state.jobType}>
+              <Headline {...this.state} />
             </LeftHeadline>
-            <LeftHeadline>
+            <LeftHeadline name="Key Projects">
               <MenuRouter
-                name="Key Projects"
                 handleMenuChange={this.handleMenuChange}
                 {...this.state}
               />
             </LeftHeadline>
-            <LeftHeadline>
-              <Education name="Education" {...this.state} />
+            <LeftHeadline name="Education" >
+              <Education {...this.state} />
             </LeftHeadline>
             <Footer />
           </Grid>
