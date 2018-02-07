@@ -37,8 +37,8 @@ class App extends Component {
     super();
     this.state = {
       entries: [],
-      jobType: 'About',
-      headline: []
+      jobType: 'Apps',
+      headline: 'About'
     };
     this.handleMenuChange = this.handleMenuChange.bind(this);
     this.handleContactClick = this.handleContactClick.bind(this);
@@ -51,21 +51,11 @@ class App extends Component {
       .then((response) => {
         const responseObj = JSON.parse(response.stringifySafe());
         const { entries } = responseObj;
-        // console.log(entries);
-        // console.log(entries.fields.startDate['en-US'].sort((a, b) => {
-        //   const aOrderNum = (a.orderNum === undefined) ? -1 : a.orderNum;
-        //   const bOrderNum = (b.orderNum === undefined) ? -1 : b.orderNum;
-        //   return bOrderNum - aOrderNum;
-        // }));
-
-        // console.log(entries.sort((a, b) => b.entry - a.entry));
         this.setState({ entries });
-        // window.localStorage.setItem('contentfulEntries', JSON.stringify(entries));
-        // const cachedJobs = window.localStorage.getItem('contentfulEntries');
       });
   }
 
-  handleContactClick = () => {
+  handleContactClick () {
     this.setState({
       headline: 'Contact'
     });
