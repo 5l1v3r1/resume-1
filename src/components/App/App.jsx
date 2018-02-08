@@ -76,7 +76,7 @@ class App extends Component {
         <MuiThemeProvider muiTheme={getMuiTheme(ResumeBaseTheme)}>
           <Grid fluid style={muiTheme.container}>
             <Header handleContactClick={this.handleContactClick} />
-            <LeftHeadline name={this.state.jobType}>
+            <LeftHeadline name={this.state.headline}>
               <Headline {...this.state} />
             </LeftHeadline>
             <LeftHeadline name="Key Projects">

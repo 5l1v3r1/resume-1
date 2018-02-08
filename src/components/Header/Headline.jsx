@@ -34,7 +34,11 @@ const Headline = props => (
       exact
       path="/contact"
       render={({ location }) =>
-        <ContactModal {...props} path={location.pathname} />
+        (
+          <Row between="xs">
+            <ContactModal {...props} path={location.pathname} />
+          </Row>
+        )
       }
     />
     <Route
