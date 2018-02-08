@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Card, CardHeader, CardText } from 'material-ui/Card';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import Recommendation from './Recommendation';
 import Skills from '../Skills/Skills';
 import StackAndDateWrapper from './StackAndDateWrapper';
 
@@ -61,15 +62,7 @@ class Job extends Component {
         <CardText expandable>
           {entry.description && entry.description['en-US']}<br />
           <br />
-          {entry.recommendation && (
-            <div>
-              <h4>Recommendation</h4>
-              <i>{entry.recommendation['en-US']}
-                <p />
-                - {entry.recommendationPerson['en-US']}
-              </i>
-            </div>
-          )}
+          <Recommendation />
           <br />
           {entry.stackLabels && <h4>{entry.stackLabels['en-US'][0]} Stack</h4>}
           {entry.stack ? <Skills entry={entry} /> : null }

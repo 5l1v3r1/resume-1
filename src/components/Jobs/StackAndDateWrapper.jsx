@@ -5,9 +5,6 @@ import Chip from 'material-ui/Chip';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 const muiTheme = getMuiTheme({
-  card: {
-    margin: 5
-  },
   chip: {
     marginRight: 20
   },
