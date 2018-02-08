@@ -11,19 +11,15 @@ const muiTheme = getMuiTheme({
     margin: 5
   },
   chip: {
-    float: 'left',
     marginRight: 20
   },
   headerRight: {
-    float: 'right',
     height: '100%',
     position: 'absolute',
     right: '45px',
-    top: '0px',
-    width: '200px'
+    top: '0px'
   },
   stackLabel: {
-    align: 'center',
     float: 'right',
     position: 'absolute',
     right: '27px',
