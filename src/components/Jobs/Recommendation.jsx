@@ -1,28 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Recommendation = ({ entry }) => (
+const Recommendation = ({ recommendation, recommendationPerson }) => (
   <div>
-    {entry.recommendation && (
+    {recommendation && (
       <div>
         <h4>Recommendation</h4>
         <i>
-          {entry.recommendation['en-US']}
+          {recommendation}
           <p />
-          - {entry.recommendationPerson['en-US']}
+          - {recommendationPerson}
         </i>
       </div>
     )}
   </div>
 );
 
-const jobItemShape = {
+Recommendation.propTypes = {
   recommendation: PropTypes.string,
   recommendationPerson: PropTypes.string
 };
 
-Recommendation.propTypes = {
-  entry: PropTypes.objectOf((PropTypes.shape(jobItemShape))).isRequired
+Recommendation.defaultProps = {
+  recommendation: null,
+  recommendationPerson: null
 };
 
 export default Recommendation;
