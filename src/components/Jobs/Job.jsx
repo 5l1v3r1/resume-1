@@ -7,6 +7,12 @@ import Skills from '../Skills/Skills';
 const muiTheme = getMuiTheme({
   card: {
     margin: 5
+  },
+  headerRight: {
+    float: 'right',
+    position: 'absolute',
+    right: '45px',
+    top: '15px'
   }
 });
 
@@ -34,7 +40,6 @@ class Job extends Component {
   render () {
     const entry = this.props.entry.fields;
     const StartYear = (entry.startDate ? entry.startDate['en-US'].split('-')[0] : '');
-    const tagline = (entry.tagline && `${entry.tagline['en-US']} ${StartYear ? ` – ${StartYear}` : ''}`);
     const isExpandable = entry.description && entry.description['en-US'] !== '';
 
     return (
@@ -45,14 +50,17 @@ class Job extends Component {
       >
         <CardHeader
           title={entry.project && entry.project['en-US']}
-          subtitle={tagline}
+          subtitle={<Tagline entry={entry} />}
           actAsExpander={isExpandable}
           showExpandableButton={isExpandable}
+          children={<HeaderRight entry={entry} />}
+          // children={entry.stackLabels && entry.stackLabels['en-US'][0]}
+          titleStyle={muiTheme.cardTitle}
+          style={muiTheme.cardHeader}
         />
         <CardText expandable>
           {entry.description && entry.description['en-US']}<br />
           <br />
-
           {entry.recommendation && (
             <div>
               <h4>Recommendation</h4>
@@ -71,6 +79,20 @@ class Job extends Component {
     );
   }
 }
+
+const HeaderRight = ({ entry }) => (
+  <div style={muiTheme.headerRight}>
+    {entry.startDate && <StartYear entry={entry} /> }
+  </div>
+);
+
+const Tagline = ({ entry }) => (
+  <i>
+    {entry.tagline && entry.tagline['en-US']}
+  </i>
+);
+
+const StartYear = ({ entry }) => (entry.startDate ? entry.startDate['en-US'].split('-')[0] : '');
 
 const jobItemShape = {
   current: PropTypes.objectOf,
