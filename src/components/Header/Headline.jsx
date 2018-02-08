@@ -11,10 +11,17 @@ const muiTheme = getMuiTheme({
     width: 80,
     height: 80,
     borderRadius: 80,
-    float: 'left'
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%,-50%)'
   },
   profilePhotoWrapper: {
-    margin: 30
+    height: '100%',
+    width: '100%',
+    minHeight: 100,
+    minWidth: 100,
+    position: 'relative'
   },
   headlineDescription: {
     textAlign: 'justify'
@@ -27,19 +34,15 @@ const Headline = props => (
       exact
       path="/contact"
       render={({ location }) =>
-        (<ContactModal
-          {...props}
-          path={location.pathname}
-        />)}
+        <ContactModal {...props} path={location.pathname} />
+      }
     />
     <Route
       exact
       path={props.jobTypes}
       render={({ location }) =>
-        (<Child
-          {...props}
-          path={location.pathname}
-        />)}
+        <Child {...props} path={location.pathname} />
+      }
     />
   </Switch>
 );
@@ -50,14 +53,10 @@ const Child = props => (
             props.jobType === entry.fields.jobType['en-US']))
   .map((entry, i) => (
     <Row key={entry}>
-      <Col xs={1} >
-        <img
-          src={profilePhoto}
-          alt="Phil Steinke"
-          style={muiTheme.profilePhoto}
-        />
+      <Col xs={12} sm={2} style={muiTheme.profilePhotoWrapper}>
+        <img src={profilePhoto} alt="Phil Steinke" style={muiTheme.profilePhoto} />
       </Col>
-      <Col xsOffset={1} xs={10} style={muiTheme.headlineDescription}>
+      <Col xs={12} sm={10} style={muiTheme.headlineDescription}>
         {entry.fields.description['en-US']}
       </Col>
     </Row>
