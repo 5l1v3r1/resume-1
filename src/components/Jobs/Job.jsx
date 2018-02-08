@@ -56,10 +56,18 @@ class Job extends Component {
           subtitle={<Tagline entry={entry} />}
           actAsExpander={isExpandable}
           showExpandableButton={isExpandable}
-          children={<StackAndDateWrapper entry={entry} />}
+          // children={
+          // }
           titleStyle={muiTheme.cardTitle}
           style={muiTheme.cardHeader}
-        />
+        >
+          {entry.stackLabels && entry.startDate &&
+          <StackAndDateWrapper
+            stackLabels={entry.stackLabels['en-US']}
+            startDate={entry.startDate['en-US']}
+          />
+          }
+        </CardHeader>
         <CardText expandable>
           {entry.description && entry.description['en-US']}<br />
           <br />

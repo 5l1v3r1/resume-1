@@ -29,33 +29,32 @@ const muiTheme = getMuiTheme({
   }
 });
 
-const StackAndDateWrapper = ({ entry }) => (
+const StackAndDateWrapper = ({ stackLabels, startDate }) => (
   <div style={muiTheme.headerRight}>
     <div style={muiTheme.stackLabel}>
-      {entry.stackLabels &&
-        <Chip key={entry.stackLabels} style={muiTheme.chip}>
-          <Avatar size={32}>
-            {entry.stackLabels['en-US'][0].charAt(0).toUpperCase()}
-          </Avatar>
-          {entry.stackLabels['en-US'][0]}
-        </Chip>
-      }
+      <Chip key={stackLabels} style={muiTheme.chip}>
+        <Avatar size={32}>
+          {stackLabels[0].charAt(0).toUpperCase()}
+        </Avatar>
+        {stackLabels[0]}
+      </Chip>
     </div>
     <div style={muiTheme.startDate}>
-      {entry.startDate && <StartYear entry={entry} /> }
+      {startDate && <StartYear startDate={startDate} /> }
     </div>
   </div>
 );
 
-const StartYear = ({ entry }) => (entry.startDate ? entry.startDate['en-US'].split('-')[0] : '');
-
-const jobItemShape = {
-  stackLabels: PropTypes.array,
-  startDate: PropTypes.array
-};
+const StartYear = ({ startDate }) => (startDate ? startDate.split('-')[0] : '');
 
 StackAndDateWrapper.propTypes = {
-  entry: PropTypes.objectOf((PropTypes.shape(jobItemShape))).isRequired
+  stackLabels: PropTypes.array,
+  startDate: PropTypes.string
+};
+
+StackAndDateWrapper.defaultProps = {
+  stackLabels: [],
+  startDate: null
 };
 
 export default StackAndDateWrapper;
