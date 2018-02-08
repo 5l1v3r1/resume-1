@@ -11,18 +11,30 @@ const muiTheme = getMuiTheme({
     margin: 5
   },
   chip: {
-    marginRight: 20,
-    float: 'left'
-  },
-  chipWrapper: {
-    display: 'flex',
-    flexWrap: 'wrap'
+    float: 'left',
+    marginRight: 20
   },
   headerRight: {
     float: 'right',
+    height: '100%',
     position: 'absolute',
     right: '45px',
-    top: '15px'
+    top: '0px',
+    width: '200px'
+  },
+  stackLabel: {
+    align: 'center',
+    float: 'right',
+    position: 'absolute',
+    right: '27px',
+    top: '50%',
+    transform: 'translate(0,-50%)'
+  },
+  startDate: {
+    position: 'absolute',
+    right: 0,
+    top: '50%',
+    transform: 'translate(0,-50%)'
   }
 });
 
@@ -63,7 +75,6 @@ class Job extends Component {
           actAsExpander={isExpandable}
           showExpandableButton={isExpandable}
           children={<HeaderRight entry={entry} />}
-          // children={entry.stackLabels && entry.stackLabels['en-US'][0]}
           titleStyle={muiTheme.cardTitle}
           style={muiTheme.cardHeader}
         />
@@ -73,9 +84,10 @@ class Job extends Component {
           {entry.recommendation && (
             <div>
               <h4>Recommendation</h4>
-              {entry.recommendation['en-US']}
-              <p />
-               - <i>{entry.recommendationPerson['en-US']}</i>
+              <i>{entry.recommendation['en-US']}
+                <p />
+                - {entry.recommendationPerson['en-US']}
+              </i>
             </div>
           )}
           <br />
@@ -83,7 +95,6 @@ class Job extends Component {
           {entry.stack ? <Skills entry={entry} /> : null }
           <div style={{ clear: 'left' }} />
         </CardText>
-        {/* {console.log(entry.startDate)} */}
       </Card>
     );
   }
@@ -91,23 +102,23 @@ class Job extends Component {
 
 const HeaderRight = ({ entry }) => (
   <div style={muiTheme.headerRight}>
-    {entry.stackLabels &&
-      <Chip key={entry.stackLabels} style={muiTheme.chip}>
-        <Avatar size={32}>
-          {entry.stackLabels['en-US'][0].charAt(0).toUpperCase()}
-        </Avatar>
-        {entry.stackLabels['en-US'][0]}
-      </Chip>
-    }
-    {entry.startDate && <StartYear entry={entry} /> }
+    <div style={muiTheme.stackLabel}>
+      {entry.stackLabels &&
+        <Chip key={entry.stackLabels} style={muiTheme.chip}>
+          <Avatar size={32}>
+            {entry.stackLabels['en-US'][0].charAt(0).toUpperCase()}
+          </Avatar>
+          {entry.stackLabels['en-US'][0]}
+        </Chip>
+      }
+    </div>
+    <div style={muiTheme.startDate}>
+      {entry.startDate && <StartYear entry={entry} /> }
+    </div>
   </div>
 );
 
-const Tagline = ({ entry }) => (
-  <i>
-    {entry.tagline && entry.tagline['en-US']}
-  </i>
-);
+const Tagline = ({ entry }) => (<div>{entry.tagline && entry.tagline['en-US']}</div>);
 
 const StartYear = ({ entry }) => (entry.startDate ? entry.startDate['en-US'].split('-')[0] : '');
 
