@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Row, Col } from 'react-flexbox-grid';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import RaisedButton from 'material-ui/RaisedButton';
@@ -39,5 +40,9 @@ const Header = ({ handleContactClick }) => (
     </Col>
   </Row>
 );
+
+Header.propTypes = {
+  handleContactClick: PropTypes.func.isRequired
+};
 
 export default Header;
