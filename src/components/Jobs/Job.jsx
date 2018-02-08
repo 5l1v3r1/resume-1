@@ -11,7 +11,8 @@ const muiTheme = getMuiTheme({
     margin: 5
   },
   chip: {
-    margin: 4
+    marginRight: 20,
+    float: 'left'
   },
   chipWrapper: {
     display: 'flex',
@@ -48,7 +49,6 @@ class Job extends Component {
 
   render () {
     const entry = this.props.entry.fields;
-    const StartYear = (entry.startDate ? entry.startDate['en-US'].split('-')[0] : '');
     const isExpandable = entry.description && entry.description['en-US'] !== '';
 
     return (
@@ -92,7 +92,12 @@ class Job extends Component {
 const HeaderRight = ({ entry }) => (
   <div style={muiTheme.headerRight}>
     {entry.stackLabels &&
-      entry.stackLabels['en-US'][0]
+      <Chip key={entry.stackLabels} style={muiTheme.chip}>
+        <Avatar size={32}>
+          {entry.stackLabels['en-US'][0].charAt(0).toUpperCase()}
+        </Avatar>
+        {entry.stackLabels['en-US'][0]}
+      </Chip>
     }
     {entry.startDate && <StartYear entry={entry} /> }
   </div>
