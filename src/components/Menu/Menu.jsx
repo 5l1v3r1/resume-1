@@ -12,7 +12,12 @@ const muiTheme = getMuiTheme({
   }
 });
 
-const jobTypes = ['Apps', 'Websites', 'Projects', 'Content'];
+const jobTypes = [
+  'Apps',
+  'Websites',
+  'Projects'
+  // 'Content'
+];
 
 const Menu = ({ jobType, handleMenuChange, ...rest }) => (
   <Row>
