@@ -1,34 +1,18 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Avatar from 'material-ui/Avatar';
 import { Card, CardHeader, CardText } from 'material-ui/Card';
-import Chip from 'material-ui/Chip';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import Skills from '../Skills/Skills';
+import StackAndDateWrapper from './StackAndDateWrapper';
 
 const muiTheme = getMuiTheme({
   card: {
     margin: 5
   },
-  chip: {
-    marginRight: 20
-  },
-  headerRight: {
-    height: '100%',
-    position: 'absolute',
-    right: '45px',
-    top: '0px'
-  },
   stackLabel: {
     float: 'right',
     position: 'absolute',
     right: '27px',
-    top: '50%',
-    transform: 'translate(0,-50%)'
-  },
-  startDate: {
-    position: 'absolute',
-    right: 0,
     top: '50%',
     transform: 'translate(0,-50%)'
   }
@@ -96,26 +80,6 @@ class Job extends Component {
   }
 }
 
-const StackAndDateWrapper = ({ entry }) => (
-  <div style={muiTheme.headerRight}>
-    <div style={muiTheme.stackLabel}>
-      {entry.stackLabels &&
-        <Chip key={entry.stackLabels} style={muiTheme.chip}>
-          <Avatar size={32}>
-            {entry.stackLabels['en-US'][0].charAt(0).toUpperCase()}
-          </Avatar>
-          {entry.stackLabels['en-US'][0]}
-        </Chip>
-      }
-    </div>
-    <div style={muiTheme.startDate}>
-      {entry.startDate && <StartYear entry={entry} /> }
-    </div>
-  </div>
-);
-
-const StartYear = ({ entry }) => (entry.startDate ? entry.startDate['en-US'].split('-')[0] : '');
-
 const Tagline = ({ entry }) => (<div>{entry.tagline && entry.tagline['en-US']}</div>);
 
 const jobItemShape = {
@@ -137,6 +101,10 @@ Job.propTypes = {
 
 Job.defaultProps = {
   isInitJobExpanded: false
+};
+
+Tagline.propTypes = {
+  entry: PropTypes.objectOf((PropTypes.shape(jobItemShape))).isRequired
 };
 
 export default Job;
