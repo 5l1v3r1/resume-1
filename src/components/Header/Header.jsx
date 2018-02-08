@@ -24,10 +24,10 @@ const muiTheme = getMuiTheme({
 
 const Header = ({ handleContactClick }) => (
   <Row>
-    <Col xs={12} sm={6} md={2} lg={2}>
+    <Col xs={6} sm={6} md={2} lg={2}>
       <h1>Phil Steinke</h1>
     </Col>
-    <Col xs={12} sm={6} md={6} lg={6}>
+    <Col xs={6} sm={6} md={6} lg={6}>
       <h1 style={{ color: ResumeBaseTheme.palette.primary1Color }}>Frontend Developer</h1>
     </Col>
     <Col xs={12} sm={6} md={4} lg={4}>

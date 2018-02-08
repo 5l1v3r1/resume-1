@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Card, CardHeader, CardText } from 'material-ui/Card';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import Achievements from './Achievements';
 import Recommendation from './Recommendation';
 import Skills from '../Skills/Skills';
 import StackAndDateWrapper from './StackAndDateWrapper';
@@ -64,6 +65,7 @@ class Job extends Component {
           <br />
           <Recommendation entry={entry} />
           <br />
+          <Achievements entry={entry} />
           {entry.stackLabels && <h4>{entry.stackLabels['en-US'][0]} Stack</h4>}
           {entry.stack ? <Skills entry={entry} /> : null }
           <div style={{ clear: 'left' }} />
