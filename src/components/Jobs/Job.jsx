@@ -70,7 +70,7 @@ class Job extends Component {
           subtitle={<Tagline entry={entry} />}
           actAsExpander={isExpandable}
           showExpandableButton={isExpandable}
-          children={<HeaderRight entry={entry} />}
+          children={<StackAndDateWrapper entry={entry} />}
           titleStyle={muiTheme.cardTitle}
           style={muiTheme.cardHeader}
         />
@@ -96,7 +96,7 @@ class Job extends Component {
   }
 }
 
-const HeaderRight = ({ entry }) => (
+const StackAndDateWrapper = ({ entry }) => (
   <div style={muiTheme.headerRight}>
     <div style={muiTheme.stackLabel}>
       {entry.stackLabels &&
@@ -114,9 +114,9 @@ const HeaderRight = ({ entry }) => (
   </div>
 );
 
-const Tagline = ({ entry }) => (<div>{entry.tagline && entry.tagline['en-US']}</div>);
-
 const StartYear = ({ entry }) => (entry.startDate ? entry.startDate['en-US'].split('-')[0] : '');
+
+const Tagline = ({ entry }) => (<div>{entry.tagline && entry.tagline['en-US']}</div>);
 
 const jobItemShape = {
   current: PropTypes.objectOf,
