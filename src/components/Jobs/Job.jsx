@@ -1,12 +1,21 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import Avatar from 'material-ui/Avatar';
 import { Card, CardHeader, CardText } from 'material-ui/Card';
+import Chip from 'material-ui/Chip';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import Skills from '../Skills/Skills';
 
 const muiTheme = getMuiTheme({
   card: {
     margin: 5
+  },
+  chip: {
+    margin: 4
+  },
+  chipWrapper: {
+    display: 'flex',
+    flexWrap: 'wrap'
   },
   headerRight: {
     float: 'right',
@@ -82,6 +91,9 @@ class Job extends Component {
 
 const HeaderRight = ({ entry }) => (
   <div style={muiTheme.headerRight}>
+    {entry.stackLabels &&
+      entry.stackLabels['en-US'][0]
+    }
     {entry.startDate && <StartYear entry={entry} /> }
   </div>
 );
