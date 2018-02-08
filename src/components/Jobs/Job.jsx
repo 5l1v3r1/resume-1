@@ -62,7 +62,7 @@ class Job extends Component {
         <CardText expandable>
           {entry.description && entry.description['en-US']}<br />
           <br />
-          <Recommendation />
+          <Recommendation entry={entry} />
           <br />
           {entry.stackLabels && <h4>{entry.stackLabels['en-US'][0]} Stack</h4>}
           {entry.stack ? <Skills entry={entry} /> : null }
