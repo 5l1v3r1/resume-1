@@ -67,7 +67,13 @@ class Job extends Component {
             <Recommendation recommendation={entry.recommendation['en-US']} recommendationPerson={entry.recommendationPerson['en-US']} />
           }
           <br />
-          <Achievements entry={entry} />
+          {entry.achievement1 &&
+            <Achievements
+              achievement1={entry.achievement1['en-US']}
+              achievement2={entry.achievement2['en-US']}
+              achievement3={entry.achievement3['en-US']}
+            />
+          }
           {entry.stackLabels && <h4>{entry.stackLabels['en-US'][0]} Stack</h4>}
           {entry.stack ? <Skills entry={entry} /> : null }
           <div style={{ clear: 'left' }} />
