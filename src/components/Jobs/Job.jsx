@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Card, CardHeader, CardText } from 'material-ui/Card';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import Achievements from './Achievements';
+// import Achievements from './Achievements';
 import Recommendation from './Recommendation';
 import Skills from '../Skills/Skills';
 import StackAndDateWrapper from './StackAndDateWrapper';
@@ -56,8 +56,6 @@ class Job extends Component {
           subtitle={<Tagline entry={entry} />}
           actAsExpander={isExpandable}
           showExpandableButton={isExpandable}
-          // children={
-          // }
           titleStyle={muiTheme.cardTitle}
           style={muiTheme.cardHeader}
         >
@@ -75,13 +73,13 @@ class Job extends Component {
             <Recommendation recommendation={entry.recommendation['en-US']} recommendationPerson={entry.recommendationPerson['en-US']} />
           }
           <br />
-          {entry.achievement1 &&
+          {/* {entry.achievement1 &&
             <Achievements
               achievement1={entry.achievement1['en-US']}
               achievement2={entry.achievement2['en-US']}
               achievement3={entry.achievement3['en-US']}
             />
-          }
+          } */}
           {entry.stackLabels && <h4>{entry.stackLabels['en-US'][0]} Stack</h4>}
           {entry.stack ? <Skills entry={entry} /> : null }
           <div style={{ clear: 'left' }} />
