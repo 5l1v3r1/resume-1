@@ -3,9 +3,9 @@ import { Route, Switch } from 'react-router-dom';
 import Menu from '../Menu/Menu';
 
 const routes = [
+  { path: '/' },
   { path: '/:careerCategory/:project' },
-  { path: '/:careerCategory/' },
-  { path: '/' }
+  { path: '/:careerCategory/' }
 ];
 
 const MenuRouter = props => (

@@ -42,6 +42,7 @@ class App extends Component {
     };
     this.handleMenuChange = this.handleMenuChange.bind(this);
     this.handleContactClick = this.handleContactClick.bind(this);
+    this.handleHeaderClick = this.handleHeaderClick.bind(this);
   }
 
   componentDidMount () {
@@ -62,6 +63,13 @@ class App extends Component {
     history.push('/Contact');
   }
 
+  handleHeaderClick () {
+    this.setState({
+      headline: 'About'
+    });
+    history.push('/');
+  }
+
   handleMenuChange (jobType) {
     this.setState({
       jobType,
@@ -75,7 +83,10 @@ class App extends Component {
       <Router history={history}>
         <MuiThemeProvider muiTheme={getMuiTheme(ResumeBaseTheme)}>
           <Grid fluid style={muiTheme.container}>
-            <Header handleContactClick={this.handleContactClick} />
+            <Header
+              handleContactClick={this.handleContactClick}
+              handleHeaderClick={this.handleHeaderClick}
+            />
             <LeftHeadline name={this.state.headline}>
               <Headline {...this.state} />
             </LeftHeadline>
@@ -86,7 +97,7 @@ class App extends Component {
               />
             </LeftHeadline>
             <LeftHeadline name="Education" >
-              <Education {...this.state} />
+              <Education entries={this.state.entries} />
             </LeftHeadline>
             <Footer />
           </Grid>
