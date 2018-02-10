@@ -32,6 +32,13 @@ const Headline = props => (
   <Switch>
     <Route
       exact
+      path="/"
+      render={({ location }) =>
+        <Child {...props} path="/" />
+      }
+    />
+    <Route
+      exact
       path="/contact"
       render={({ location }) =>
         (
@@ -54,24 +61,29 @@ const Headline = props => (
 const Child = props => (
   props.entries
     .filter(entry => entry.sys.contentType.sys.id === 'jobTypes' &&
-            props.jobType === entry.fields.jobType['en-US']))
-  .map((entry, i) => (
-    <Row key={entry}>
-      <Col xs={12} sm={2} style={muiTheme.profilePhotoWrapper}>
-        <img src={profilePhoto} alt="Phil Steinke" style={muiTheme.profilePhoto} />
-      </Col>
-      <Col xs={12} sm={10} style={muiTheme.headlineDescription}>
-        {entry.fields.description['en-US']}
-      </Col>
-    </Row>
+            props.headline === entry.fields.jobType['en-US']))
+  .map(entry => (
+    <div key={entry}>
+      <Row>
+        <Col xs={12} sm={2} style={muiTheme.profilePhotoWrapper}>
+          <img src={profilePhoto} alt="Phil Steinke" style={muiTheme.profilePhoto} />
+        </Col>
+        <Col xs={12} sm={10} style={muiTheme.headlineDescription}>
+          {entry.fields.description['en-US']}
+        </Col>
+      </Row>
+    </div>
   ));
 
 Headline.propTypes = {
-  jobTypes: PropTypes.string
+  jobTypes: PropTypes.string,
+  headline: PropTypes.string
+
 };
 
 Headline.defaultProps = {
-  jobTypes: null
+  jobTypes: null,
+  headline: null
 };
 
 export default Headline;

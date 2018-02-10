@@ -9,7 +9,6 @@ const routes = [
 ];
 
 const MenuRouter = props => (
-
   <Switch>
     {routes.map(route => (
       <Route

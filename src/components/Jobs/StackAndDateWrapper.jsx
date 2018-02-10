@@ -47,8 +47,13 @@ const StackAndDateWrapper = ({ stackLabels, startDate }) => (
 
 const StartYear = ({ startDate }) => (startDate ? startDate.split('-')[0] : '');
 
-StackAndDateWrapper.propTypes = {
+const jobItemShape = {
   stackLabels: PropTypes.array,
+  startDate: PropTypes.array
+};
+
+StackAndDateWrapper.propTypes = {
+  stackLabels: PropTypes.objectOf((PropTypes.shape(jobItemShape))),
   startDate: PropTypes.string
 };
 
