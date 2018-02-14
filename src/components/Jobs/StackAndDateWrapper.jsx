@@ -1,25 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Avatar from 'material-ui/Avatar';
-import Chip from 'material-ui/Chip';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import StackChip from '../StackChip';
 
 const muiTheme = getMuiTheme({
-  chip: {
-    marginRight: 20
-  },
   headerRight: {
     height: '100%',
     position: 'absolute',
     right: '45px',
     top: '0px'
-  },
-  stackLabel: {
-    float: 'right',
-    position: 'absolute',
-    right: '27px',
-    top: '50%',
-    transform: 'translate(0,-50%)'
   },
   startDate: {
     position: 'absolute',
@@ -31,14 +20,7 @@ const muiTheme = getMuiTheme({
 
 const StackAndDateWrapper = ({ stackLabels, startDate }) => (
   <div style={muiTheme.headerRight}>
-    <div style={muiTheme.stackLabel}>
-      <Chip key={stackLabels} style={muiTheme.chip}>
-        <Avatar size={32}>
-          {stackLabels[0].charAt(0).toUpperCase()}
-        </Avatar>
-        {stackLabels[0]}
-      </Chip>
-    </div>
+    <StackChip stackLabels={stackLabels} />
     <div style={muiTheme.startDate}>
       {startDate && <StartYear startDate={startDate} /> }
     </div>
@@ -48,12 +30,12 @@ const StackAndDateWrapper = ({ stackLabels, startDate }) => (
 const StartYear = ({ startDate }) => (startDate ? startDate.split('-')[0] : '');
 
 const jobItemShape = {
-  stackLabels: PropTypes.array,
+  stackLabels: PropTypes.string,
   startDate: PropTypes.array
 };
 
 StackAndDateWrapper.propTypes = {
-  stackLabels: PropTypes.objectOf((PropTypes.shape(jobItemShape))),
+  // stackLabels: PropTypes.arrayOf((PropTypes.shape(jobItemShape))),
   startDate: PropTypes.string
 };
 
