@@ -15,8 +15,8 @@ const muiTheme = getMuiTheme({
 const jobTypes = [
   'Apps',
   'Websites',
+  'Content Marketing',
   'Projects'
-  // 'Content'
 ];
 
 const Menu = ({ jobType, handleMenuChange, ...rest }) => (
