@@ -12,7 +12,7 @@ import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import Headline from '../Header/Headline';
 import MenuRouter from '../Menu/MenuRouter';
-import LeftHeadline from '../LeftHeadline';
+import LeftHeadline from '../../theme/LeftHeadline';
 
 const muiTheme = getMuiTheme({
   container: {
@@ -21,9 +21,6 @@ const muiTheme = getMuiTheme({
     marginLeft: 'auto',
     marginRight: 'auto',
     display: 'block'
-  },
-  raisedButton: {
-    color: '#000000'
   }
 });
 

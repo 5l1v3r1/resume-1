@@ -5,20 +5,22 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import Achievements from './Achievements';
 import Recommendation from './Recommendation';
 import Skills from '../Skills/Skills';
-import StackAndDateWrapper from './StackAndDateWrapper';
+import AlignRightAndVerticalCenter from '../../theme/AlignRightAndVerticalCenter.jsx';
+import StackChip from '../StackChip';
 
 const muiTheme = getMuiTheme({
   card: {
     margin: 5
   },
-  stackLabel: {
-    float: 'right',
+  startDateWrapper: {
     position: 'absolute',
-    right: '27px',
+    right: 0,
     top: '50%',
     transform: 'translate(0,-50%)'
   }
 });
+
+const StartYear = ({ startDate }) => (startDate ? startDate.split('-')[0] : '');
 
 class Job extends Component {
   constructor (props) {
@@ -59,12 +61,10 @@ class Job extends Component {
           titleStyle={muiTheme.cardTitle}
           style={muiTheme.cardHeader}
         >
-          {entry.stackLabels && entry.startDate &&
-          <StackAndDateWrapper
-            stackLabels={entry.stackLabels['en-US']}
-            startDate={entry.startDate['en-US']}
-          />
-          }
+          <AlignRightAndVerticalCenter>
+            <StackChip stackLabels={entry.stackLabels['en-US']} />
+            {entry.startDate && <StartYear startDate={entry.startDate['en-US']} /> }
+          </AlignRightAndVerticalCenter>
         </CardHeader>
         <CardText expandable>
           {entry.description && entry.description['en-US']}<br />
