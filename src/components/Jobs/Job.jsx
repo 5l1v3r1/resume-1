@@ -5,7 +5,8 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import Achievements from './Achievements';
 import Recommendation from './Recommendation';
 import Skills from '../Skills/Skills';
-import AlignRightAndVerticalCenter from '../../theme/AlignRightAndVerticalCenter.jsx';
+import AlignRight from '../../theme/AlignRight';
+import VerticalCenter from '../../theme/VerticalCenter';
 import StackChip from '../StackChip';
 
 const muiTheme = getMuiTheme({
@@ -61,10 +62,12 @@ class Job extends Component {
           titleStyle={muiTheme.cardTitle}
           style={muiTheme.cardHeader}
         >
-          <AlignRightAndVerticalCenter>
-            <StackChip stackLabels={entry.stackLabels['en-US']} />
-            {entry.startDate && <StartYear startDate={entry.startDate['en-US']} /> }
-          </AlignRightAndVerticalCenter>
+          <AlignRight>
+            <VerticalCenter>
+              <StackChip stackLabels={entry.stackLabels['en-US']} />
+              {entry.startDate && <StartYear startDate={entry.startDate['en-US']} /> }
+            </VerticalCenter>
+          </AlignRight>
         </CardHeader>
         <CardText expandable>
           {entry.description && entry.description['en-US']}<br />

@@ -17,7 +17,7 @@ const muiTheme = getMuiTheme({
   }
 });
 
-const AlignRightAndVerticalCenter = props => (
+const VerticalCenter = props => (
   <div style={muiTheme.alignRight}>
     <div style={muiTheme.startDateWrapper}>
       {props.children}
@@ -25,12 +25,12 @@ const AlignRightAndVerticalCenter = props => (
   </div>
 );
 
-AlignRightAndVerticalCenter.propTypes = {
+VerticalCenter.propTypes = {
   children: PropTypes.oneOfType([PropTypes.element, PropTypes.array])
 };
 
-AlignRightAndVerticalCenter.defaultProps = {
+VerticalCenter.defaultProps = {
   children: null
 };
 
-export default AlignRightAndVerticalCenter;
+export default VerticalCenter;
