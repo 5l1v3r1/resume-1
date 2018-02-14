@@ -19,9 +19,9 @@ Achievements.propTypes = {
 };
 
 Achievements.defaultProps = {
-  achievement1: PropTypes.string,
-  achievement2: PropTypes.string,
-  achievement3: PropTypes.string
+  achievement1: PropTypes.function || null,
+  achievement2: PropTypes.function || null,
+  achievement3: PropTypes.function || null
 };
 
 export default Achievements;
