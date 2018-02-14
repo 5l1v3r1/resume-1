@@ -3,13 +3,7 @@ import PropTypes from 'prop-types';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 const muiTheme = getMuiTheme({
-  alignRight: {
-    height: '100%',
-    position: 'absolute',
-    right: '45px',
-    top: '0px'
-  },
-  startDateWrapper: {
+  verticalCenter: {
     position: 'absolute',
     right: 0,
     top: '50%',
@@ -18,10 +12,8 @@ const muiTheme = getMuiTheme({
 });
 
 const VerticalCenter = props => (
-  <div style={muiTheme.alignRight}>
-    <div style={muiTheme.startDateWrapper}>
-      {props.children}
-    </div>
+  <div style={muiTheme.verticalCenter}>
+    {props.children}
   </div>
 );
 

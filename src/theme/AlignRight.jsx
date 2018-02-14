@@ -8,20 +8,12 @@ const muiTheme = getMuiTheme({
     position: 'absolute',
     right: '45px',
     top: '0px'
-  },
-  startDateWrapper: {
-    position: 'absolute',
-    right: 0,
-    top: '50%',
-    transform: 'translate(0,-50%)'
   }
 });
 
 const AlignRight = props => (
   <div style={muiTheme.alignRight}>
-    <div style={muiTheme.startDateWrapper}>
-      {props.children}
-    </div>
+    {props.children}
   </div>
 );
 
