@@ -63,7 +63,7 @@ class Job extends Component {
           style={muiTheme.cardHeader}
         >
           <AlignRight>
-            <VerticalCenter>
+            <VerticalCenter right>
               <StackChip stackLabels={entry.stackLabels['en-US']} />
               {entry.startDate && <StartYear startDate={entry.startDate['en-US']} /> }
             </VerticalCenter>

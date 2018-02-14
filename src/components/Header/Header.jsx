@@ -5,6 +5,7 @@ import { Row, Col } from 'react-flexbox-grid';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import RaisedButton from 'material-ui/RaisedButton';
 import ResumeBaseTheme from '../../theme/resumeBaseTheme';
+import VerticalCenter from '../../theme/VerticalCenter';
 
 const muiTheme = getMuiTheme({
   profilePhoto: {
@@ -17,31 +18,49 @@ const muiTheme = getMuiTheme({
     display: 'inline-block',
     alignContent: 'center'
   },
-  raisedButton: {
-    marginTop: '21px',
-    float: 'right'
+  contactButton: {
+    // marginTop: '21px',
+    margin: 16
+    // float: 'right'
   }
 });
 
 const Header = ({ handleContactClick, handleHeaderClick }) => (
   <Row>
-    <Col xs={6} sm={6} md={2} lg={2}>
-      <h1>
-        <Link to="/" onClick={handleHeaderClick}>Phil Steinke</Link>
-      </h1>
+    <Col xs={12} sm={6} md lg={2}>
+      <VerticalCenter right={false}>
+        <h1>
+          <Link to="/" onClick={handleHeaderClick}>Phil Steinke</Link>
+        </h1>
+      </VerticalCenter>
+
     </Col>
-    <Col xs={6} sm={6} md={6} lg={6}>
-      <h1 style={{ color: ResumeBaseTheme.palette.primary1Color }}>
-        <Link to="/" onClick={handleHeaderClick}>Frontend Developer</Link>
-      </h1>
+    <Col xs={12} sm={6} md lg={8}>
+      <VerticalCenter right={false}>
+        <h1>
+          <Link
+            to="/"
+            onClick={handleHeaderClick}
+            style={{ color: ResumeBaseTheme.palette.primary1Color }}
+          >
+          Frontend Developer
+          </Link>
+        </h1>
+      </VerticalCenter>
     </Col>
-    <Col xs={12} sm={6} md={4} lg={4}>
-      <RaisedButton
-        label="Get in touch"
-        secondary
-        style={muiTheme.raisedButton}
-        onClick={handleContactClick}
-      />
+    <Col xs={12} sm={12} md={3} lg={2} end="sm">
+      <Row end="sm">
+        {/* <VerticalCenter> */}
+        <Col>
+          <RaisedButton
+            label="Get in touch"
+            secondary
+            style={muiTheme.contactButton}
+            onClick={handleContactClick}
+          />
+        </Col>
+      </Row>
+      {/* </VerticalCenter> */}
     </Col>
   </Row>
 );
