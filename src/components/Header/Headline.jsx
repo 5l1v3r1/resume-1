@@ -5,6 +5,7 @@ import { Row, Col } from 'react-flexbox-grid';
 import { Route, Switch } from 'react-router-dom';
 import ContactModal from './ContactModal';
 import profilePhoto from '../../images/philsteinke mugshot bw.png';
+import './Headline.css';
 
 const muiTheme = getMuiTheme({
   profilePhoto: {
@@ -23,6 +24,19 @@ const muiTheme = getMuiTheme({
     minWidth: 100,
     position: 'relative'
   },
+  // '@media (min-width: 1024px)': {
+  //   headlineDescription: {
+  //     color: 'red'
+  //   }
+  // },
+  // '@media (min-width: 599px)': {
+  //   // profilePhoto: {
+  //   //
+  //   // },
+  //   headlineDescription: {
+  //     color: 'red'
+  //   }
+  // },
   headlineDescription: {
     textAlign: 'justify'
   }
@@ -65,10 +79,10 @@ const Child = props => (
   .map(entry => (
     <div key={entry}>
       <Row>
-        <Col xs={12} sm={2} style={muiTheme.profilePhotoWrapper}>
-          <img src={profilePhoto} alt="Phil Steinke" style={muiTheme.profilePhoto} />
+        <Col xs={12} sm={2} className="profilePhotoWrapper">
+          <img src={profilePhoto} alt="Phil Steinke" className="profilePhoto" />
         </Col>
-        <Col xs={12} sm={10} style={muiTheme.headlineDescription}>
+        <Col xs={12} sm={10} classname="headlineDescription">
           {entry.fields.description['en-US']}
         </Col>
       </Row>

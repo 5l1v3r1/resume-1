@@ -1,0 +1,20 @@
+.profilePhoto {
+  border-radius: 80;
+  height: 80;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: 'translate(-50%,-50%)';
+  width: 80;
+  /*background-image: '../../images/philsteinke mugshot bw.png'*/
+}
+.profilePhotoWrapper {
+  height: 100%;
+  min-height: 100;
+  min-width: 100;
+  position: relative;
+  width: 100%;
+}
+.headlineDescription {
+  text-align: justify
+}
