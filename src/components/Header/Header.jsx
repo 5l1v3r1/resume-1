@@ -5,7 +5,6 @@ import { Row, Col } from 'react-flexbox-grid';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import RaisedButton from 'material-ui/RaisedButton';
 import ResumeBaseTheme from '../../theme/resumeBaseTheme';
-import VerticalCenter from '../../theme/VerticalCenter';
 
 const muiTheme = getMuiTheme({
   profilePhoto: {
@@ -26,31 +25,25 @@ const muiTheme = getMuiTheme({
 });
 
 const Header = ({ handleContactClick, handleHeaderClick }) => (
-  <Row>
+  <Row middle="xs">
     <Col xs={12} sm={6} md lg={2}>
-      <VerticalCenter right={false}>
-        <h1>
-          <Link to="/" onClick={handleHeaderClick}>Phil Steinke</Link>
-        </h1>
-      </VerticalCenter>
-
+      <h1>
+        <Link to="/" onClick={handleHeaderClick}>Phil Steinke</Link>
+      </h1>
     </Col>
-    <Col xs={12} sm={6} md lg={8}>
-      <VerticalCenter right={false}>
-        <h1>
-          <Link
-            to="/"
-            onClick={handleHeaderClick}
-            style={{ color: ResumeBaseTheme.palette.primary1Color }}
-          >
+    <Col xs={12} sm={6} md>
+      <h1>
+        <Link
+          to="/"
+          onClick={handleHeaderClick}
+          style={{ color: ResumeBaseTheme.palette.primary1Color }}
+        >
           Frontend Developer
-          </Link>
-        </h1>
-      </VerticalCenter>
+        </Link>
+      </h1>
     </Col>
-    <Col xs={12} sm={12} md={3} lg={2} end="sm">
+    <Col xs={12} sm={12} md={3} lg={3} end="sm">
       <Row end="sm">
-        {/* <VerticalCenter> */}
         <Col>
           <RaisedButton
             label="Get in touch"
@@ -60,7 +53,6 @@ const Header = ({ handleContactClick, handleHeaderClick }) => (
           />
         </Col>
       </Row>
-      {/* </VerticalCenter> */}
     </Col>
   </Row>
 );

@@ -6,7 +6,7 @@ import Achievements from './Achievements';
 import Recommendation from './Recommendation';
 import Skills from '../Skills/Skills';
 import AlignRight from '../../theme/AlignRight';
-import VerticalCenter from '../../theme/VerticalCenter';
+import AlignMiddle from '../../theme/AlignMiddle';
 import StackChip from '../StackChip';
 
 const muiTheme = getMuiTheme({
@@ -63,10 +63,10 @@ class Job extends Component {
           style={muiTheme.cardHeader}
         >
           <AlignRight>
-            <VerticalCenter right>
+            <AlignMiddle right>
               <StackChip stackLabels={entry.stackLabels['en-US']} />
               {entry.startDate && <StartYear startDate={entry.startDate['en-US']} /> }
-            </VerticalCenter>
+            </AlignMiddle>
           </AlignRight>
         </CardHeader>
         <CardText expandable>
