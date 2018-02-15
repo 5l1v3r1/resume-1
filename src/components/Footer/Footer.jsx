@@ -1,20 +1,18 @@
 import React from 'react';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import { Row, Col } from 'react-flexbox-grid';
-
-const muiTheme = getMuiTheme({
-  footerLink: {
-    textAlign: 'center',
-    width: '100%',
-    margin: '50px'
-  }
-});
+import Github from '../../images/GitHub-Mark/PNG/GitHub-Mark-32px.png';
 
 const Footer = () => (
-  <Row>
-    <Col xs style={muiTheme.footerLink}>
-      <a href="http:tgrrr.com">&copy; tgrrr.com</a><br />
-      {/* <a href="http://github.com/tgrrr/resume"> how was this resume made?</a> */}
+  <Row middle="xs" center="xs">
+    <Col xs={1}>
+      <a href="http://github.com/tgrrr/resume">
+        <img src={Github} alt="Resume on Github" />
+      </a>
+    </Col>
+    <Col xs={4}>
+      <a href="http://github.com/tgrrr/resume">
+        View this expandable resume on Github
+      </a>
     </Col>
   </Row>
 );
