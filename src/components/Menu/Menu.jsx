@@ -5,12 +5,7 @@ import { Row, Col } from 'react-flexbox-grid';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import { Tabs, Tab } from 'material-ui/Tabs';
 import Jobs from '../Jobs/Jobs';
-
-const muiTheme = getMuiTheme({
-  tab: {
-    margin: '0 5px'
-  }
-});
+import './Menu.css';
 
 const jobTypes = [
   'Apps',
@@ -28,7 +23,7 @@ const Menu = ({ jobType, handleMenuChange, ...rest }) => (
             key={jobTypeHeader}
             label={jobTypeHeader}
             value={jobTypeHeader}
-            style={muiTheme.tab}
+            className="tab"
           >
             <Jobs jobType={jobType} {...rest} />
           </Tab>

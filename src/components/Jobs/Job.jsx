@@ -1,25 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Card, CardHeader, CardText } from 'material-ui/Card';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import Achievements from './Achievements';
 import Recommendation from './Recommendation';
 import Skills from '../Skills/Skills';
 import AlignRight from '../../theme/AlignRight';
 import AlignMiddle from '../../theme/AlignMiddle';
 import StackChip from '../StackChip';
-
-const muiTheme = getMuiTheme({
-  card: {
-    margin: 5
-  },
-  startDateWrapper: {
-    position: 'absolute',
-    right: 0,
-    top: '50%',
-    transform: 'translate(0,-50%)'
-  }
-});
 
 const StartYear = ({ startDate }) => (startDate ? startDate.split('-')[0] : '');
 
@@ -50,7 +37,7 @@ class Job extends Component {
 
     return (
       <Card
-        style={muiTheme.card}
+        className="card"
         expanded={this.state.isExpanded}
         onExpandChange={this.handleExpandChange}
       >
@@ -59,8 +46,6 @@ class Job extends Component {
           subtitle={<Tagline entry={entry} />}
           actAsExpander={isExpandable}
           showExpandableButton={isExpandable}
-          titleStyle={muiTheme.cardTitle}
-          style={muiTheme.cardHeader}
         >
           <AlignRight>
             <AlignMiddle right>

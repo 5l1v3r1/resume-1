@@ -2,27 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Row, Col } from 'react-flexbox-grid';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import RaisedButton from 'material-ui/RaisedButton';
 import ResumeBaseTheme from '../../theme/resumeBaseTheme';
-
-const muiTheme = getMuiTheme({
-  profilePhoto: {
-    width: 150,
-    height: 150,
-    borderRadius: 150,
-    marginLeft: 'auto',
-    marginRight: 'auto',
-    position: 'relative',
-    display: 'inline-block',
-    alignContent: 'center'
-  },
-  contactButton: {
-    // marginTop: '21px',
-    margin: 16
-    // float: 'right'
-  }
-});
+import './Header.css';
 
 const Header = ({ handleContactClick, handleHeaderClick }) => (
   <Row middle="xs">
@@ -48,7 +30,7 @@ const Header = ({ handleContactClick, handleHeaderClick }) => (
           <RaisedButton
             label="Get in touch"
             secondary
-            style={muiTheme.contactButton}
+            className="contactButton"
             onClick={handleContactClick}
           />
         </Col>

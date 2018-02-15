@@ -1,22 +1,13 @@
 import React from 'react';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import { Row, Col } from 'react-flexbox-grid';
-
-const muiTheme = getMuiTheme({
-  education: {
-    margin: '10px 0'
-  },
-  date: {
-    textAlign: 'right'
-  }
-});
+import './Education.css';
 
 const Education = ({ entries }) => (
   <div>
     {entries
       .filter(entry => entry.sys.contentType.sys.id === 'education')
       .map((entry, i) => (
-        <Row style={muiTheme.education} key={i}>
+        <Row className="education" key={entry.fields.institution['en-US']}>
           <Col xs={12} sm={8}>
             <strong>{entry.fields.institution['en-US']}</strong>
           </Col>

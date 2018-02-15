@@ -1,15 +1,9 @@
 import React from 'react';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import { Row, Col } from 'react-flexbox-grid';
-
-const muiTheme = getMuiTheme({
-  careerHeadline: {
-    margin: '30px 0'
-  }
-});
+import './LeftHeadline.css';
 
 const LeftHeadline = props => (
-  <Row style={muiTheme.careerHeadline}>
+  <Row className="CareerHeadline">
     <Col xs={12} md={2}>
       <h3>{props.name}</h3>
     </Col>

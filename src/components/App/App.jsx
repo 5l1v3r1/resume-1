@@ -72,7 +72,6 @@ class App extends Component {
         <MuiThemeProvider muiTheme={getMuiTheme(ResumeBaseTheme)}>
           <Grid
             fluid
-            // style={muiTheme.container}
             className="container"
           >
             <Header

@@ -1,18 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
-
-const muiTheme = getMuiTheme({
-  alignRight: {
-    height: '100%',
-    position: 'absolute',
-    right: '45px',
-    top: '0px'
-  }
-});
+import './AlignRight.css';
 
 const AlignRight = props => (
-  <div style={muiTheme.alignRight}>
+  <div className="AlignRight">
     {props.children}
   </div>
 );

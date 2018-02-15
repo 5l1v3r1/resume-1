@@ -1,0 +1,7 @@
+.Chip {
+  float: left;
+  margin: 4px !important;
+}
+.ChipWrapper {
+  display: block;
+}

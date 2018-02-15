@@ -1,0 +1,18 @@
+.AlignMiddle {
+  left: 50%;
+  margin-left: 8px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  white-space: nowrap;
+}
+.AlignMiddleRight {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+.AlignMiddleWrapper {
+  height: 100%;
+  position: relative;
+}

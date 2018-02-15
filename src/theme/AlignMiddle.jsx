@@ -1,47 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import './AlignMiddle.css';
 
-const muiTheme = getMuiTheme({
-  alignMiddle: {
-    top: '50%',
-    left: '50%',
-    marginLeft: 8,
-    position: 'absolute',
-    transform: 'translate(-50%,-50%)',
-    whiteSpace: 'nowrap'
-  },
-  alignMiddleRight: {
-    right: 0,
-    top: '50%',
-    transform: 'translate(-50%,-50%)',
-    position: 'absolute'
-
-  },
-  alignMiddleWrapper: {
-    height: '100%',
-    position: 'relative'
-  }
-});
-
-const alignMiddle = props => (
-  <div style={muiTheme.alignMiddleWrapper}>
+const AlignMiddle = props => (
+  <div className="AlignMiddleWrapper">
     {props.right
-      ? <div style={muiTheme.alignMiddleRight}>{props.children}</div>
-      : <div style={muiTheme.alignMiddle}>{props.children}</div>
+      ? <div className="AlignMiddleRight">{props.children}</div>
+      : <div className="AlignMiddle">{props.children}</div>
     }
   </div>
 
 );
 
-alignMiddle.propTypes = {
+AlignMiddle.propTypes = {
   children: PropTypes.oneOfType([PropTypes.element, PropTypes.array]),
   right: PropTypes.bool
 };
 
-alignMiddle.defaultProps = {
+AlignMiddle.defaultProps = {
   children: null,
   right: false
 };
 
-export default alignMiddle;
+export default AlignMiddle;
