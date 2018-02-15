@@ -16,7 +16,6 @@ class Job extends Component {
     this.state = {
       isExpanded: false
     };
-    this.handleExpandChange = this.handleExpandChange.bind(this);
   }
 
   componentWillMount () {
@@ -25,11 +24,9 @@ class Job extends Component {
     });
   }
 
-  handleExpandChange () {
-    this.setState(prevState => ({
-      isExpanded: !prevState.isExpanded
-    }));
-  }
+  handleExpandChange = expanded => {
+    this.setState({ isExpanded: expanded });
+  };
 
   render () {
     const entry = this.props.entry.fields;
