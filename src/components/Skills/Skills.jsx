@@ -10,7 +10,6 @@ const Skills = ({ entry }) => (
       entry.stack &&
         <Skill key={stackItem} stack={stackItem} />
     ))}
-
   </div>
 );
 

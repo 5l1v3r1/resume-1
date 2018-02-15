@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 // import { withRouter } from 'react-router-dom';
 import { Row, Col } from 'react-flexbox-grid';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import { Tabs, Tab } from 'material-ui/Tabs';
 import Jobs from '../Jobs/Jobs';
 import './Menu.css';
