@@ -13,16 +13,7 @@ import Header from '../Header/Header';
 import Headline from '../Header/Headline';
 import MenuRouter from '../Menu/MenuRouter';
 import LeftHeadline from '../../theme/LeftHeadline';
-
-const muiTheme = getMuiTheme({
-  container: {
-    position: 'relative',
-    maxWidth: '940px',
-    marginLeft: 'auto',
-    marginRight: 'auto',
-    display: 'block'
-  }
-});
+import './App.css';
 
 const client = contentful.createClient({
   space: 'mvpdp8cmlaoe', // space: { spaceId },
@@ -79,7 +70,11 @@ class App extends Component {
     return (
       <Router history={history}>
         <MuiThemeProvider muiTheme={getMuiTheme(ResumeBaseTheme)}>
-          <Grid fluid style={muiTheme.container}>
+          <Grid
+            fluid
+            // style={muiTheme.container}
+            className="container"
+          >
             <Header
               handleContactClick={this.handleContactClick}
               handleHeaderClick={this.handleHeaderClick}

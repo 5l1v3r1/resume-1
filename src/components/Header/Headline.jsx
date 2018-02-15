@@ -7,28 +7,6 @@ import ContactModal from './ContactModal';
 import profilePhoto from '../../images/philsteinke mugshot bw.png';
 import './Headline.css';
 
-// const muiTheme = getMuiTheme({
-//   profilePhoto: {
-//     width: 80,
-//     height: 80,
-//     borderRadius: 80
-//     position: 'absolute',
-//     top: '50%',
-//     left: '50%',
-//     transform: 'translate(-50%,-50%)'
-//   },
-//   profilePhotoWrapper: {
-//     height: '100%',
-//     width: '100%',
-//     minHeight: 100,
-//     minWidth: 100,
-//     position: 'relative'
-//   },
-//   headlineDescription: {
-//     textAlign: 'justify'
-//   }
-// });
-
 const Headline = props => (
   <Switch>
     <Route
@@ -65,26 +43,11 @@ const Child = props => (
             props.headline === entry.fields.jobType['en-US']))
   .map(entry => (
     <div key={entry}>
-      <Row>
-        <Col
-          xs={12}
-          sm={2}
-          className="ProfilePhotoWrapper"
-          // style={muiTheme.profilePhotoWrapper}
-        >
-          <img
-            src={profilePhoto}
-            alt="Phil Steinke"
-            className="ProfilePhoto"
-            style={{
-              borderRadius: 80,
-              height: 80,
-              width: 80
-            }}
-            // style={muiTheme.profilePhoto}
-          />
+      <Row middle="xs" center="xs">
+        <Col xs={12} sm={2}>
+          <img src={profilePhoto} alt="Phil Steinke" className="ProfilePhoto" />
         </Col>
-        <Col xs={12} sm={10} classname="headlineDescription">
+        <Col xs={12} sm={10} className="headlineDescription">
           {entry.fields.description['en-US']}
         </Col>
       </Row>

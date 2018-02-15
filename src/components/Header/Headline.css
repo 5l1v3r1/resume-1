@@ -1,21 +1,8 @@
 .headlineDescription {
-  color: red;
   text-align: justify;
 }
 .ProfilePhoto {
-  border-radius: 80 !important;
-  height: 80 !important;
-  width: 80 !important;
-  /*left: 50%;*/
-  /*position: absolute;
-  top: 50%;
-  transform: 'translate(-50%,-50%)';*/
-  /*background-image: '../../images/philsteinke mugshot bw.png'*/
-}
-.ProfilePhotoWrapper {
-  height: 100%;
-  min-height: 100;
-  min-width: 100;
-  position: relative;
-  width: 100%;
+  border-radius: 80px;
+  height: 80px;
+  width: 80px;
 }
