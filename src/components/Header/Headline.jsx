@@ -11,11 +11,11 @@ const muiTheme = getMuiTheme({
   profilePhoto: {
     width: 80,
     height: 80,
-    borderRadius: 80,
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%,-50%)'
+    borderRadius: 80
+    // position: 'absolute',
+    // top: '50%',
+    // left: '50%',
+    // transform: 'translate(-50%,-50%)'
   },
   profilePhotoWrapper: {
     height: '100%',
@@ -79,8 +79,8 @@ const Child = props => (
   .map(entry => (
     <div key={entry}>
       <Row>
-        <Col xs={12} sm={2} className="profilePhotoWrapper">
-          <img src={profilePhoto} alt="Phil Steinke" className="profilePhoto" />
+        <Col xs={12} sm={2} className={muiTheme.profilePhotoWrapper} >
+          <img src={profilePhoto} alt="Phil Steinke" style={muiTheme.profilePhoto} />
         </Col>
         <Col xs={12} sm={10} classname="headlineDescription">
           {entry.fields.description['en-US']}
