@@ -1,5 +1,5 @@
 import React from 'react';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
+// import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import PropTypes from 'prop-types';
 import { Row, Col } from 'react-flexbox-grid';
 import { Route, Switch } from 'react-router-dom';
@@ -7,40 +7,27 @@ import ContactModal from './ContactModal';
 import profilePhoto from '../../images/philsteinke mugshot bw.png';
 import './Headline.css';
 
-const muiTheme = getMuiTheme({
-  profilePhoto: {
-    width: 80,
-    height: 80,
-    borderRadius: 80
-    // position: 'absolute',
-    // top: '50%',
-    // left: '50%',
-    // transform: 'translate(-50%,-50%)'
-  },
-  profilePhotoWrapper: {
-    height: '100%',
-    width: '100%',
-    minHeight: 100,
-    minWidth: 100,
-    position: 'relative'
-  },
-  // '@media (min-width: 1024px)': {
-  //   headlineDescription: {
-  //     color: 'red'
-  //   }
-  // },
-  // '@media (min-width: 599px)': {
-  //   // profilePhoto: {
-  //   //
-  //   // },
-  //   headlineDescription: {
-  //     color: 'red'
-  //   }
-  // },
-  headlineDescription: {
-    textAlign: 'justify'
-  }
-});
+// const muiTheme = getMuiTheme({
+//   profilePhoto: {
+//     width: 80,
+//     height: 80,
+//     borderRadius: 80
+//     position: 'absolute',
+//     top: '50%',
+//     left: '50%',
+//     transform: 'translate(-50%,-50%)'
+//   },
+//   profilePhotoWrapper: {
+//     height: '100%',
+//     width: '100%',
+//     minHeight: 100,
+//     minWidth: 100,
+//     position: 'relative'
+//   },
+//   headlineDescription: {
+//     textAlign: 'justify'
+//   }
+// });
 
 const Headline = props => (
   <Switch>
@@ -79,8 +66,23 @@ const Child = props => (
   .map(entry => (
     <div key={entry}>
       <Row>
-        <Col xs={12} sm={2} className={muiTheme.profilePhotoWrapper} >
-          <img src={profilePhoto} alt="Phil Steinke" style={muiTheme.profilePhoto} />
+        <Col
+          xs={12}
+          sm={2}
+          className="ProfilePhotoWrapper"
+          // style={muiTheme.profilePhotoWrapper}
+        >
+          <img
+            src={profilePhoto}
+            alt="Phil Steinke"
+            className="ProfilePhoto"
+            style={{
+              borderRadius: 80,
+              height: 80,
+              width: 80
+            }}
+            // style={muiTheme.profilePhoto}
+          />
         </Col>
         <Col xs={12} sm={10} classname="headlineDescription">
           {entry.fields.description['en-US']}
