@@ -4,12 +4,12 @@ import Github from '../../images/GitHub-Mark/PNG/GitHub-Mark-32px.png';
 
 const Footer = () => (
   <Row middle="xs" center="xs">
-    <Col xs={1}>
+    <Col xs={12} md={1}>
       <a href="http://github.com/tgrrr/resume">
         <img src={Github} alt="Resume on Github" />
       </a>
     </Col>
-    <Col xs={4}>
+    <Col xs={12} md={4}>
       <a href="http://github.com/tgrrr/resume">
         View this expandable resume on Github
       </a>
