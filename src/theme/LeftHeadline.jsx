@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import startCase from 'lodash.startcase';
 import { Row, Col } from 'react-flexbox-grid';
 import './LeftHeadline.css';
@@ -13,5 +14,14 @@ const LeftHeadline = props => (
     </Col>
   </Row>
 );
+
+LeftHeadline.propTypes = {
+  name: PropTypes.string,
+  children: PropTypes.element.isRequired
+};
+
+LeftHeadline.defaultProps = {
+  name: null
+};
 
 export default LeftHeadline;
