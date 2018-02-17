@@ -13,7 +13,7 @@ const Headline = props => (
       exact
       path="/"
       render={({ location }) =>
-        <Child {...props} path="/" />
+        <Child {...props} />
       }
     />
     <Route
@@ -31,7 +31,7 @@ const Headline = props => (
       exact
       path={props.jobTypes}
       render={({ location }) =>
-        <Child {...props} path={location.pathname} />
+        <Child {...props} />
       }
     />
   </Switch>
@@ -40,7 +40,7 @@ const Headline = props => (
 const Child = props => (
   props.entries
     .filter(entry => entry.sys.contentType.sys.id === 'jobTypes' &&
-            props.headline === entry.fields.jobType['en-US']))
+            props.headline.toLowerCase() === entry.fields.jobType['en-US'].toLowerCase()))
   .map(entry => (
     <div key={entry}>
       <Row middle="xs" center="xs">

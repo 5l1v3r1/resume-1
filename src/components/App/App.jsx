@@ -25,7 +25,7 @@ class App extends Component {
     super();
     this.state = {
       entries: [],
-      jobType: 'Apps',
+      jobType: 'apps',
       headline: 'About'
     };
     this.handleMenuChange = this.handleMenuChange.bind(this);
@@ -48,7 +48,7 @@ class App extends Component {
     this.setState({
       headline: 'Contact'
     });
-    history.push('/Contact');
+    history.push('/contact');
   }
 
   handleHeaderClick () {

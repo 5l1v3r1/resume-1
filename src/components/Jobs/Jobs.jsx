@@ -4,7 +4,7 @@ import Job from './Job';
 const Jobs = props => (
   props.entries
     .filter(entry => entry.sys.contentType.sys.id === 'job' &&
-    props.jobType === entry.fields.jobType['en-US'])
+    props.jobType === entry.fields.jobType['en-US'].toLowerCase())
     .sort((a, b) => new Date(b.fields.startDate['en-US']) - new Date(a.fields.startDate['en-US']))
     .map((entry, i) => (
       <Job

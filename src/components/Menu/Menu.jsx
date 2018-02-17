@@ -7,10 +7,10 @@ import Jobs from '../Jobs/Jobs';
 import './Menu.css';
 
 const jobTypes = [
-  'Apps',
-  'Websites',
-  'Content Marketing',
-  'Projects'
+  'apps',
+  'websites',
+  'content marketing',
+  'projects'
 ];
 
 const Menu = ({ jobType, handleMenuChange, ...rest }) => (
@@ -24,7 +24,7 @@ const Menu = ({ jobType, handleMenuChange, ...rest }) => (
             value={jobTypeHeader}
             className="tab"
           >
-            <Jobs jobType={jobType} {...rest} />
+            <Jobs jobType={jobType.toLowerCase()} {...rest} />
           </Tab>
         ))}
       </Tabs>
@@ -34,6 +34,7 @@ const Menu = ({ jobType, handleMenuChange, ...rest }) => (
 
 Menu.propTypes = {
   jobType: PropTypes.oneOf(['Apps', 'Websites', 'Content Marketing', 'Projects', 'About', 'Contact']).isRequired,
+  jobType: PropTypes.oneOf(['apps', 'websites', 'content marketing', 'projects', 'about', 'contact']).isRequired,
   handleMenuChange: PropTypes.func,
   isInitJobExpanded: PropTypes.bool
 };
