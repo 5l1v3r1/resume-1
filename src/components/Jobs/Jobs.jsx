@@ -10,7 +10,7 @@ const Jobs = props => (
       <Job
         id={entry.sys.id}
         entry={entry}
-        isInitJobExpanded={(entry.fields.project['en-US'] === props.initJobExpanded)}
+        isInitJobExpanded={(entry.fields.project['en-US'].toLowerCase() === props.initJobExpanded.toLowerCase())}
         key={entry.sys.id}
       />
     )));
