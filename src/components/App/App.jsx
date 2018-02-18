@@ -70,10 +70,7 @@ class App extends Component {
     return (
       <Router history={history}>
         <MuiThemeProvider muiTheme={getMuiTheme(ResumeBaseTheme)}>
-          <Grid
-            fluid
-            className="container"
-          >
+          <Grid fluid className="container">
             <Header
               handleContactClick={this.handleContactClick}
               handleHeaderClick={this.handleHeaderClick}

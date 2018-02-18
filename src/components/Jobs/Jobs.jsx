@@ -10,12 +10,15 @@ const Jobs = props => (
       <Job
         id={entry.sys.id}
         entry={entry}
-        isInitJobExpanded={
-          entry.fields.project['en-US'] &&
-          props.initJobExpanded &&
-          (entry.fields.project['en-US'].toLowerCase() === props.initJobExpanded)}
+        isInitJobExpanded={isInitJobExpanded({ entry, props })}
         key={entry.sys.id}
       />
     )));
+
+const isInitJobExpanded = ({ entry, props }) => (
+  entry.fields.project['en-US'] &&
+  props.initJobExpanded &&
+  entry.fields.project['en-US'] === props.initJobExpanded
+);
 
 export default Jobs;
