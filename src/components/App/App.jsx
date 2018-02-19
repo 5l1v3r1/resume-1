@@ -12,7 +12,7 @@ import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import Headline from '../Header/Headline';
 import MenuRouter from '../Menu/MenuRouter';
-import LeftHeadline from '../theme/LeftHeadline';
+import LeftHeadline from '../LeftHeadline/LeftHeadline';
 import './App.css';
 
 const client = contentful.createClient({
