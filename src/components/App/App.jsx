@@ -72,7 +72,7 @@ class App extends Component {
         <MuiThemeProvider muiTheme={getMuiTheme(ResumeBaseTheme)}>
           <Grid
             fluid
-            className="container"
+            className="App__container"
           >
             <Header
               handleContactClick={this.handleContactClick}

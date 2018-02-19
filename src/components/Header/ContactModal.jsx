@@ -9,16 +9,14 @@ import './ContactModal.css';
 const ContactModal = props => (
   props.entries
     .filter(entry => entry.sys.contentType.sys.id === 'contact')
-    .map(entry => (
-      <Col >
+    .map((entry, i) => (
+      <Col key={entry.fields.name['en-US']}>
         <RaisedButton
-          key={entry.sys.id}
+          className="ContactModal__button"
           label={entry.fields.name && entry.fields.name['en-US']}
           labelPosition="after"
           // icon={entry.fields.icon && entry.fields.icon['en-US']}
           secondary
-          color="white"
-          className="raisedButton"
           href={entry.fields.link && entry.fields.link['en-US']}
         />
       </Col>

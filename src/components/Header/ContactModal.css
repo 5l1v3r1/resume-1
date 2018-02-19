@@ -1,3 +1,9 @@
-.raised-button {
-  margin: 10
+.ContactModal__button {
+  margin: 20px;
+}
+
+@media only screen and (max-width: 470px) {
+  .ContactModal__button {
+    margin: 8px;
+  }
 }

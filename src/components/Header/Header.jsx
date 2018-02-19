@@ -30,7 +30,7 @@ const Header = ({ handleContactClick, handleHeaderClick }) => (
           <RaisedButton
             label="Get in touch"
             secondary
-            className="contactButton"
+            className="Header__Button-contact"
             onClick={handleContactClick}
           />
         </Col>
