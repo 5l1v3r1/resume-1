@@ -5,7 +5,7 @@ import Avatar from 'material-ui/Avatar';
 import './Skills.css';
 
 const Skills = ({ entry }) => (
-  <div className="ChipWrapper">
+  <div className=".Skills__wrapper">
     {entry.stack['en-US'].map((stackItem, i) => (
       entry.stack &&
         <Skill key={stackItem} stack={stackItem} />
@@ -14,7 +14,7 @@ const Skills = ({ entry }) => (
 );
 
 const Skill = ({ stack }) => (
-  <Chip className="Chip">
+  <Chip className="Skills__Chip {">
     <Avatar size={32}>{String(stack).charAt(0)}</Avatar>
     { stack }
   </Chip>

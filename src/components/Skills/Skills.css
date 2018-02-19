@@ -1,7 +1,7 @@
-.Chip {
+.Skills__Chip {
   float: left;
   margin: 4px !important;
 }
-.ChipWrapper {
+.Skills__wrapper {
   display: block;
 }

@@ -1,7 +1,7 @@
-.Chip {
+.StackChip__Chip {
   margin-right: 20px;
 }
-.StackLabel {
+.StackChip__wrapper {
   float: right;
   position: absolute;
   right: 45px;
@@ -9,7 +9,7 @@
   transform: translate(0,-50%);
 }
 @media only screen and (max-width: 470px) {
-  .StackLabel {
+  .StackChip__wrapper {
     display: none;
   }
 }
