@@ -6,7 +6,7 @@ import Recommendation from './Recommendation';
 import Skills from '../Skills/Skills';
 import AlignRight from '../../theme/AlignRight';
 import AlignMiddle from '../../theme/AlignMiddle';
-import StackChip from '../StackChip';
+import StackChip from '../StackChip/StackChip';
 
 const StartYear = ({ startDate }) => (startDate ? startDate.split('-')[0] : '');
 

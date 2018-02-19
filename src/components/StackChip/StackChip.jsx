@@ -6,7 +6,7 @@ import './StackChip.css';
 
 const StackChip = ({ stackLabels }) => (
   <div className="StackChip__wrapper">
-    <Chip key={stackLabels} className="StackChip__Chip" >
+    <Chip key={stackLabels} className="StackChip__chip" >
       <Avatar size={32}>
         {stackLabels[0].charAt(0).toUpperCase()}
       </Avatar>
