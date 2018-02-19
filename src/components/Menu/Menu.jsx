@@ -22,7 +22,7 @@ const Menu = ({ jobType, handleMenuChange, ...rest }) => (
             key={jobTypeHeader}
             label={jobTypeHeader}
             value={jobTypeHeader}
-            className="tab"
+            className="Menu__title-jobType"
           >
             <Jobs jobType={jobType} {...rest} />
           </Tab>
