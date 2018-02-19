@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Row, Col } from 'react-flexbox-grid';
 import { Route, Switch } from 'react-router-dom';
-import ContactModal from './ContactModal';
+import Contact from './Contact';
 import profilePhoto from '../../images/philsteinke mugshot bw.png';
 import './Headline.css';
 
@@ -22,7 +22,7 @@ const Headline = props => (
       render={({ location }) =>
         (
           <Row between="xs">
-            <ContactModal {...props} path={location.pathname} />
+            <Contact {...props} path={location.pathname} />
           </Row>
         )
       }
