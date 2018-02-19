@@ -3,7 +3,7 @@ import { Row, Col } from 'react-flexbox-grid';
 import './LeftHeadline.css';
 
 const LeftHeadline = props => (
-  <Row className="CareerHeadline">
+  <Row className="LeftHeadline__title">
     <Col xs={12} md={2}>
       <h3>{props.name}</h3>
     </Col>

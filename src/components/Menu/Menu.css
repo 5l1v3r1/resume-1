@@ -7,19 +7,17 @@
   .Menu__title-jobType {
     font-size: 10px !important;
   }
-
-  .CareerHeadline .col-xs {
-    padding: 0
-  }
 }
 
 @media only screen and (max-width: 426px) {
+
   .Menu__title-jobType {
     font-size: 12px !important;
   }
 }
 
 @media only screen and (min-width: 427px) {
+
   .Menu__title-jobType {
     font-size: 14px !important;
   }
