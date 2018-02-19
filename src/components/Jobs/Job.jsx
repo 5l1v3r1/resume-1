@@ -4,8 +4,8 @@ import { Card, CardHeader, CardText } from 'material-ui/Card';
 import Achievements from './Achievements';
 import Recommendation from './Recommendation';
 import Skills from '../Skills/Skills';
-import AlignRight from '../../theme/AlignRight';
-import AlignMiddle from '../../theme/AlignMiddle';
+import AlignRight from '../theme/AlignRight';
+import AlignMiddle from '../theme/AlignMiddle.jsx';
 import StackChip from '../StackChip/StackChip';
 
 const StartYear = ({ startDate }) => (startDate ? startDate.split('-')[0] : '');
@@ -34,7 +34,7 @@ class Job extends Component {
 
     return (
       <Card
-        className="card"
+        className="Job__card"
         expanded={this.state.isExpanded}
         onExpandChange={this.handleExpandChange}
       >

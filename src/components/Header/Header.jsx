@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Row, Col } from 'react-flexbox-grid';
 import RaisedButton from 'material-ui/RaisedButton';
-import ResumeBaseTheme from '../../theme/resumeBaseTheme';
+import ResumeBaseTheme from '../theme/resumeBaseTheme';
 import './Header.css';
 
 const Header = ({ handleContactClick, handleHeaderClick }) => (

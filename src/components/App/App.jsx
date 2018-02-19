@@ -6,13 +6,13 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 // import { deliveryAccessToken, spaceId } from '../../config';
 import history from '../../history';
-import ResumeBaseTheme from '../../theme/resumeBaseTheme';
+import ResumeBaseTheme from '../theme/resumeBaseTheme';
 import Education from '../Education/Education';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import Headline from '../Header/Headline';
 import MenuRouter from '../Menu/MenuRouter';
-import LeftHeadline from '../../theme/LeftHeadline';
+import LeftHeadline from '../theme/LeftHeadline';
 import './App.css';
 
 const client = contentful.createClient({
