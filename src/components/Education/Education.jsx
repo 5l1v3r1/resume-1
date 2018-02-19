@@ -7,14 +7,16 @@ const Education = ({ entries }) => (
     {entries
       .filter(entry => entry.sys.contentType.sys.id === 'education')
       .map((entry, i) => (
-        <Row className="education" key={entry.fields.institution['en-US']}>
+        <Row className="Education" key={entry.fields.institution['en-US']}>
           <Col xs={12} sm={8}>
             <strong>{entry.fields.institution['en-US']}</strong>
           </Col>
           <Col xs={12} sm={4}>
             <Row end="sm">
               <Col xs>
-                {entry.fields.yearRange['en-US']}
+                <div className="Education__date">
+                  {entry.fields.yearRange['en-US']}
+                </div>
               </Col>
             </Row>
           </Col>

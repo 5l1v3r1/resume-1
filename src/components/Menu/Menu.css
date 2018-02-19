@@ -11,9 +11,6 @@
   .CareerHeadline .col-xs {
     padding: 0
   }
-  .education .col-xs {
-    padding: 8px !important
-  }
 }
 @media only screen and (max-width: 426px) {
   .tab {
