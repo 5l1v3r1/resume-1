@@ -1,13 +1,13 @@
-.headlineDescription {
+.Headline__description {
   text-align: justify;
 }
-.ProfilePhoto {
+.Headline__photo-profile {
   border-radius: 80px;
   height: 80px;
   width: 80px;
 }
 @media only screen and (max-width: 470px) {
-  .ProfilePhoto {
+  .Headline__photo-profile {
     display: none;
   }
 }

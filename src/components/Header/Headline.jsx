@@ -45,9 +45,9 @@ const Child = props => (
     <div key={entry}>
       <Row middle="xs" center="xs">
         <Col xs={12} sm={2}>
-          <img src={profilePhoto} alt="Phil Steinke" className="ProfilePhoto" />
+          <img src={profilePhoto} alt="Phil Steinke" className="Headline__photo-profile" />
         </Col>
-        <Col xs={12} sm={10} className="headlineDescription">
+        <Col xs={12} sm={10} className="Headline__description">
           {entry.fields.description['en-US']}
         </Col>
       </Row>
