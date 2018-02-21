@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import Menu from '../Menu/Menu';
 
 const routes = [
@@ -13,7 +13,7 @@ const MenuRouter = props => (
   routes.map(route => (
     <Route
       exact
-      key={route}
+      key={route.path}
       path={route.path}
       render={({ match }) => (
         <Menu
