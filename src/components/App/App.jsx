@@ -33,6 +33,10 @@ class App extends Component {
     this.handleHeaderClick = this.handleHeaderClick.bind(this);
   }
 
+  componentWillMount () {
+    this.setState({ jobType: history.location.pathname.replace(/\//, '') });
+  }
+
   componentDidMount () {
     client.sync({
       initial: true
