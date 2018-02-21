@@ -34,7 +34,10 @@ class App extends Component {
   }
 
   componentWillMount () {
-    this.setState({ jobType: history.location.pathname.replace(/\//, '') });
+    const path = history.location.pathname.replace(/\//, '');
+    path.toLowerCase() === 'contact'
+      ? this.setState({ headline: 'Contact' })
+      : this.setState({ jobType: path, headline: path });
   }
 
   componentDidMount () {

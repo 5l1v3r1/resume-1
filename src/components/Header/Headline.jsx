@@ -13,7 +13,7 @@ const Headline = props => (
       exact
       path="/"
       render={({ location }) =>
-        <Child {...props} path="/" />
+        <Child {...props} />
       }
     />
     <Route
