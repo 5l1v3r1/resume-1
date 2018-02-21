@@ -33,11 +33,15 @@ class App extends Component {
     this.handleHeaderClick = this.handleHeaderClick.bind(this);
   }
 
+  // TODO: refactor this, Menu and Headline into a single Router Component
   componentWillMount () {
     const path = history.location.pathname.replace(/\//, '');
-    path.toLowerCase() === 'contact'
-      ? this.setState({ headline: 'Contact' })
-      : this.setState({ jobType: path, headline: path });
+
+    if (path.toLowerCase() === 'contact') {
+      this.setState({ headline: 'Contact' });
+    } else if (path === '') {
+      this.setState({ headline: 'About' });
+    }
   }
 
   componentDidMount () {
