@@ -4,26 +4,25 @@ import Menu from '../Menu/Menu';
 
 const routes = [
   { path: '/' },
-  { path: '/:careerCategory/:project' },
-  { path: '/:careerCategory/' }
+  { path: '/:jobType/:project' },
+  { path: '/:jobType/' }
 ];
 
 const MenuRouter = props => (
-  <Switch>
-    {routes.map(route => (
-      <Route
-        exact
-        key={route}
-        path={route.path}
-        render={({ match }) => (
-          <Menu
-            initJobExpanded={match.params.project}
-            {...props}
-          />
-        )}
-      />
-    ))}
-  </Switch>
+
+  routes.map(route => (
+    <Route
+      exact
+      key={route}
+      path={route.path}
+      render={({ match }) => (
+        <Menu
+          initJobExpanded={match.params.project}
+          {...props}
+        />
+      )}
+    />
+  ))
 );
 
 export default MenuRouter;
