@@ -5,7 +5,7 @@ import Achievements from './Achievements';
 import Recommendation from './Recommendation';
 import Skills from '../Skills/Skills';
 import AlignRight from '../theme/AlignRight';
-import AlignMiddle from '../theme/AlignMiddle.jsx';
+import AlignMiddle from '../theme/AlignMiddle';
 import StackChip from '../StackChip/StackChip';
 
 const StartYear = ({ startDate }) => (startDate ? startDate.split('-')[0] : '');
@@ -24,9 +24,7 @@ class Job extends Component {
     });
   }
 
-  handleExpandChange = expanded => {
-    this.setState({ isExpanded: expanded });
-  };
+  handleExpandChange = expanded => this.setState({ isExpanded: expanded });
 
   render () {
     const entry = this.props.entry.fields;
