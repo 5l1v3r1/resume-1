@@ -1,100 +1,113 @@
-# Expandable Resume
+# Phil Steinke - Frontend Developer
+t: [+61403989033](tel:+61403989033) e: [phil@tgrrr.com](mailto:phil@tgrrr.com) w: [tgrrr.com](https://www.tgrrr.com/) Melbourne, Australia
 
-## How to use this:
-You can find my Frontend Developer Resume here.
+I have 10 years’ experience with a range of technologies, specialising primarily in and Chatbots, React and PHP
 
-For each job, the company has the option to click on the link and learn more about the job.
+# Skills
 
-## What does it do?
+### Code
+**Strong** – React, JavaScript ES6, PHP, HTML5, Sass, SQL, REST, automation and GIT
 
-- **tl;dr:** Speeds up matching the right person with a job
-- Quickly tailor resumes - Job seekers select the relevant entries, and then click to tailor their resume
-- It then creates a unique PDF and website for each job they're applying for
-- Each section of the PDF resume has a brief description of each job.
-- Get more detail - Interviewers who want more details can click on each job, and see a more detailed CV with all of the details they might be looking for
-- Data driven - Provides a heatmap so we can see what interviewers care about, to provide a data driven way to automatically improve resumes
-- Imports history from Linkedin
+**Knowledgeable** – React Native, Redux, Node.js, SOAP APIs, Nginx and Amazon Web Services (AWS)
 
-## Why did I build this?
-- Single page resume's are great, and I found myself wanting to provide more details if people asked.
-- It saves time for everyone
-- Stands out while applying for entries
-- Caters for people who want a preview of a resume, and for those wanting more detail
+**Prior experience** – Ruby on Rails and Microsoft Server IIS
 
-## Benefits for:
+### Design
+**Strong** – Mobile-first, responsive design, Bootstrap, Material design, WordPress and Magento Ecommerce
 
-#### Job hunters
-
-It's time consuming for candidates to:
-  - Update a resume
-  - Customise a resume for each position
-- We risk missing important points with cut down resumes
-
-#### Interviewer
-
-Find the right person
-- Great job hunters are too busy working on great projects, so don't apply.
-
-It's time consuming for interviewers to:
-- Read through a 6 page resume. This way they can see a short teaser resume, and get more detail if necessary.
-
-## Roadmap
-
-[Trello Roadmap](https://trello.com/c/kCaGWRXu) (private)
-
-#### Its a best guess why
-
-Job hunter -> Recruiter -> Automated filter -> Human Resources -> Interviewer -> Decision Maker
-               (maybe)      (maybe)
+### Project Management
+**Strong** – Agile Scrum, product development, project management on film sets, interpersonal skills and stakeholder relations
 
 
+# Education
+**RMIT** – Masters of Analytics - Started 2018
 
-____________________________________________________________________
+**University of NSW** – Bachelor of Arts (Honours) – Philosophy - 2004 – 2008
+ - Open Source Software, Leadership and Business Ethics
 
-# Features
+**University of Wollongong** – Bachelor of Commerce
+Management and International Relations - 2001 – 2002
 
-## Built with:
-- Serverless
-- React.js
-- ES6 Javascript ECMA6
-- CSS in JS
-- [Contentful CMS](http://contentful.com)
-- [Material UI](http://www.material-ui.com/#/)
-- [Create React App](https://github.com/facebook/create-react-app)
+# Training
+**[A Cloud Guru](https://acloud.guru)** – AWS Serverless Certification - Current
 
-____________________________________________________________________
+**[React Training](https://reacttraining.com/)** – Presented by React Router creator Michael Jackson - 2017
 
-## Folder Structure
+**General Assembly** – Agile Project Management - 2017
 
-```
-resume-adaptive/
-  public/
-    index.html
-    favicon.ico
-    _redirects
-  src/
-    components/
-      App/
-        App.jsx
-        App.css
-        App.test.js
-      Education/
-      Footer/
-      Header/
-      Jobs/
-      Menu/
-      Skills/
-      utils/
-    css
-    fonts
-    images
-    layout
-  history
-    index.css
-    index.js
-    logo.svg
-  .babelrc - for ESLint setup
-  .netlify
-  package.json
-  README.md
-```
+# Career History
+
+## Director and Founder – Tgrrr Digital
+Chatbots, Automation, App and Web development agency
+2008 – 2018
+
+#### Key Projects:
+
+## Random Jammer
+Frontend Developer – Guitar hero app for real bands
+Synced audio streams that can be individually muted
+Ecommerce platform for a multi–tenant marketplace
+
+**Code:** React, Node.js, AWS Serverless, RESTful API
+
+## Volly Chatbot
+Frontend Developer – Chatbot to organise volunteers for a day
+
+**Code:** React, JavaScript ES6, Serverless, Facebook Messenger
+
+## Donor Chatbot - Red Cross Australia
+Conversational automation of blood donation appointments
+
+**Code:** React, JavaScript ES6, Serverless, Facebook Messenger
+
+## [Get Recruits](https://www.tgrrr.com/get-recruits)
+Frontend Developer – Footy Recruitment Simplified
+- Prevented circumventing payment
+- Automated security to reduce network spam by 99%
+
+**Code:** PHP, WordPress, BuddyPress, Paypal Flow, JavaScript
+
+## [Porsche Australia](https://www.tgrrr.com/work#porsche)
+– Microsite for Panamera – WordPress
+
+## [Dream Of a Shadow](http://dreamofashadow.botbotdot.com/)
+– Parallax responsive website, EDM, Social Media
+
+## [The Ross Partnership](http://trpagency.com.au/)
+– Agency portfolio – Custom PHP
+
+## Rbutr
+– Chrome Plugin
+
+## VAPS
+– EDM Newsletter
+
+## [CIO – HelloFlexi](https://www.tgrrr.com/helloflexi)
+The best fitness studios. One membership - 2014 – 2015
+- Project managed 17 crew across three teams
+- Improved booking system UI, lazy-loader and CRUD to reduce loading from 19 to 0.3 seconds
+- Fastest to market with a successful exit after six months
+
+**Code:** Ruby on Rails, JavaScript, MindBody SOAP API, Nginx
+
+# Previous Experience
+
+**Siebel Coach and Account Manager** – Telstra and Kennards 2005 – 2009
+
+**Coding and Philosophy Teacher** – Candlebark and Preshil - 2013
+**Network and Email** – PAG, Candlebark, The Ross Partnership - 2014
+
+**Film Production** – Management of corporate video and features - 2012 – 2015
+
+# Own Projects
+
+**[botbotdot.com](http://botbotdot.com)** (own business) – Chatbots, Artificial Intelligence and Automation
+
+**Drippy Tapp** – Gardening, home-brew and dog-training automation
+ - **Code:** Amazon Alexa and Google Home, React Native, Redux, Python and Node.js
+
+
+**Indie Film** – Netflix for Indies
+ - **Code:** React, React Native, Redux
+
+[Download the pdf version here](https://github.com/tgrrr/resume/raw/master/Frontend%20Developer%20Resume%20-%20Phil%20Steinke%202018.pdf)
