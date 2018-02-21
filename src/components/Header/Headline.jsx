@@ -22,7 +22,7 @@ const Headline = props => (
       render={({ location }) =>
         (
           <Row between="xs">
-            <Contact {...props} path={location.pathname} />
+            <Contact {...props} />
           </Row>
         )
       }
@@ -31,7 +31,7 @@ const Headline = props => (
       exact
       path={props.jobTypes}
       render={({ location }) =>
-        <Child {...props} path={location.pathname} />
+        <Child {...props} />
       }
     />
   </Switch>
