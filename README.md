@@ -1,4 +1,4 @@
-# Expandable Resume - Alpha
+ # Expandable Resume - Alpha
 
 ## How to use this:
 
