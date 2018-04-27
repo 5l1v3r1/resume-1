@@ -3,8 +3,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Row, Col } from 'react-flexbox-grid';
 import { Route, Switch } from 'react-router-dom';
-import Contact from './Contact';
-import profilePhoto from '../../images/philsteinke mugshot bw.png';
+import Contact from '../Contact/Contact';
+import profilePhoto from '../../../images/philsteinke mugshot bw.png';
 import './Headline.css';
 
 const Headline = props => (
@@ -34,6 +34,12 @@ const Headline = props => (
         <Child {...props} />
       }
     />
+    {/* <Route
+      path="jobsearch"
+      render={({ location }) =>
+        <JobSearchTable />
+      }
+    /> */}
   </Switch>
 );
 
