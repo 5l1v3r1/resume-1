@@ -10,7 +10,7 @@ import ResumeBaseTheme from '../theme/resumeBaseTheme';
 import Education from '../Education/Education';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
-import Headline from '../Header/Headline';
+import Headline from '../Header/Headline/Headline';
 import MenuRouter from '../Menu/MenuRouter';
 import LeftHeadline from '../LeftHeadline/LeftHeadline';
 import './App.css';
@@ -81,10 +81,7 @@ class App extends Component {
     return (
       <Router history={history}>
         <MuiThemeProvider muiTheme={getMuiTheme(ResumeBaseTheme)}>
-          <Grid
-            fluid
-            className="App__container"
-          >
+          <Grid fluid className="App__container">
             <Header
               handleContactClick={this.handleContactClick}
               handleHeaderClick={this.handleHeaderClick}

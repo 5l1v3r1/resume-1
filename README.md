@@ -1,4 +1,4 @@
- # Expandable Resume - Alpha
+# React Resume - Alpha
 
 ## How to use this:
 
@@ -13,12 +13,16 @@ For each job, you can click on the link and learn more about the job.
 ## Why did I build this?
 - **To simplify my resume** - Single page resume's are great, and I found myself wanting to provide more details if people asked.
 - **Drill down for more detail** - Interviewers who want more details can click on each job, and see a more detailed CV with all of the details they might seek
-- We still need to submit pdfs for jobs
-- **Save time** for everyone
-- **Because getting a job is time expensive** - We put so many layers in between a job seeker and the decision maker
+- _But_ We still need to submit pdfs documents for jobs
+- **Save time** for everyone - because we put so many filters in between a job seeker and the decision maker:
 
-Job seeker -> Recruiter -> Automated filter -> Human Resources -> Rounds of tests -> Interviewer -> Decision Maker
-            (potentially)  (potentially)
+  - Job seeker
+  - Recruiter (potentially)
+  - Automated filter
+  - Human Resources
+  - Rounds of tests
+  - Interviewer(s)
+  - Decision Maker
 
 ## Built with:
 - React.js
@@ -28,6 +32,15 @@ Job seeker -> Recruiter -> Automated filter -> Human Resources -> Rounds of test
 - Static CMS - [Contentful](http://contentful.com)
 - Design [Material UI](http://www.material-ui.com/#/)
 - [Create React App](https://github.com/facebook/create-react-app)
+
+## Why static?
+
+- [1.4 second initial load]
+- 7 initial requests
+- sub .1 second initial response
+- data syncs locally for PWA's and **faster** secondary load times
+
+[1.4 second initial load]: https://tools.keycdn.com/speed?h=5ae2bf0671bf270b7472c345
 
 ## Benefits for:
 
